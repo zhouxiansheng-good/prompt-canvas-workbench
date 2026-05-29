@@ -1,0 +1,106 @@
+export interface Prompt {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  type: 'prompt' | 'persona' | 'project' | 'skill';
+  category: string;
+  tags: string[];
+  usageCount: number;
+  createdAt: string;
+}
+
+export const categories = [
+  { id: 'all', label: '全部' },
+  { id: 'ecommerce-marketing', label: '电商/营销' },
+  { id: 'marketing-copywriting', label: '营销/文案' },
+  { id: 'social-media', label: '社交媒体' },
+  { id: 'email-marketing', label: '邮件/营销' },
+  { id: 'seo-content', label: 'SEO/内容' },
+  { id: 'ecommerce-copywriting', label: '电商/文案' },
+  { id: 'brand-copywriting', label: '品牌/文案' },
+  { id: 'operation-community', label: '运营/社群' },
+  { id: 'customer-service', label: '客服/电商' },
+  { id: 'video-content', label: '视频/内容' },
+  { id: 'analysis-research', label: '分析/研究' },
+  { id: 'analysis-user', label: '分析/用户' },
+  { id: 'activity-operation', label: '活动/运营' },
+  { id: 'data-analysis', label: '数据/分析' },
+] as const;
+
+export const prompts: Prompt[] = [
+  {
+    id: 'free-1',
+    title: '电商产品描述生成器',
+    description: '为任何电商产品生成专业、吸引人的产品描述，提升转化率',
+    type: 'prompt',
+    category: 'ecommerce-marketing',
+    content: `你是一位资深电商文案专家。请为以下产品撰写一段专业的产品描述。\n\n产品信息：\n- 产品名称：[填写产品名称]\n- 产品类别：[填写类别]\n- 核心卖点：[填写核心卖点]\n- 目标人群：[填写目标人群]\n\n要求：\n1. 开头用一句话抓住注意力\n2. 突出3个核心卖点\n3. 包含情感化描述\n4. 结尾加入行动号召\n5. 总字数控制在150-200字\n6. 语言风格：专业且有温度`,
+    tags: ['产品描述', '转化率', '文案'],
+    usageCount: 1280,
+    createdAt: '2026-05-20',
+  },
+  {
+    id: 'free-2',
+    title: '小红书种草文案',
+    description: '生成符合小红书风格的种草文案，包含emoji和话题标签',
+    type: 'prompt',
+    category: 'social-media',
+    content: `你是一位小红书爆款文案写手。请为以下产品撰写一篇种草笔记。\n\n产品信息：\n- 产品名称：[填写产品名称]\n- 产品特点：[填写特点]\n- 使用场景：[填写场景]\n\n要求：\n1. 标题要吸引人，带emoji\n2. 正文分3-4段，每段不超过3行\n3. 加入真实使用感受\n4. 结尾加3-5个相关话题标签\n5. 语气亲切自然，像朋友推荐\n6. 总字数300-500字`,
+    tags: ['小红书', '种草', '社交媒体'],
+    usageCount: 956,
+    createdAt: '2026-05-21',
+  },
+  {
+    id: 'free-3',
+    title: '促销邮件主题行',
+    description: '生成高打开率的促销邮件主题行，提升邮件营销效果',
+    type: 'prompt',
+    category: 'email-marketing',
+    content: `你是一位邮件营销专家。请为以下促销活动生成10个高打开率的邮件主题行。\n\n活动信息：\n- 活动类型：[填写活动类型，如限时折扣/满减/买赠]\n- 折扣力度：[填写折扣]\n- 产品类别：[填写产品类别]\n- 目标人群：[填写目标人群]\n\n要求：\n1. 制造紧迫感或好奇心\n2. 长度控制在30-50个字符\n3. 避免垃圾邮件触发词\n4. 包含个性化元素\n5. 提供A/B测试建议`,
+    tags: ['邮件营销', '主题行', '促销'],
+    usageCount: 743,
+    createdAt: '2026-05-22',
+  },
+  {
+    id: 'free-4',
+    title: '短视频带货脚本',
+    description: '生成抖音/快手风格的短视频带货脚本，包含话术和节奏',
+    type: 'prompt',
+    category: 'video-content',
+    content: `你是一位短视频带货脚本策划。请为以下产品撰写一个60秒的带货脚本。\n\n产品信息：\n- 产品名称：[填写产品名称]\n- 核心卖点：[填写卖点]\n- 目标平台：[抖音/快手/视频号]\n- 价格区间：[填写价格]\n\n要求：\n1. 开头3秒必须抓住注意力（钩子）\n2. 中间展示产品卖点和使用效果\n3. 结尾制造紧迫感促单\n4. 标注每段的时长和画面建议\n5. 包含主播话术和情绪标注\n6. 总时长控制在60秒内`,
+    tags: ['短视频', '带货', '脚本'],
+    usageCount: 1120,
+    createdAt: '2026-05-23',
+  },
+  {
+    id: 'free-5',
+    title: '商品标题SEO优化',
+    description: '优化电商商品标题，提升搜索排名和点击率',
+    type: 'prompt',
+    category: 'seo-content',
+    content: `你是一位电商SEO专家。请为以下商品优化标题，提升搜索排名。\n\n商品信息：\n- 商品名称：[填写商品名称]\n- 核心关键词：[填写核心词]\n- 长尾关键词：[填写长尾词]\n- 平台：[淘宝/京东/拼多多]\n\n要求：\n1. 标题长度符合平台要求\n2. 核心关键词前置\n3. 包含属性词（材质/规格/场景）\n4. 避免关键词堆砌\n5. 提供3个不同风格的标题选项\n6. 解释每个标题的优化逻辑`,
+    tags: ['SEO', '标题优化', '搜索排名'],
+    usageCount: 892,
+    createdAt: '2026-05-24',
+  },
+];
+
+export function getPromptById(id: string): Prompt | undefined {
+  return prompts.find((p) => p.id === id);
+}
+
+export function getPromptsByCategory(category: string): Prompt[] {
+  if (category === 'all') return prompts;
+  return prompts.filter((p) => p.category === category);
+}
+
+export function searchPrompts(query: string): Prompt[] {
+  const lowerQuery = query.toLowerCase();
+  return prompts.filter(
+    (p) =>
+      p.title.toLowerCase().includes(lowerQuery) ||
+      p.description.toLowerCase().includes(lowerQuery) ||
+      p.tags.some((tag) => tag.toLowerCase().includes(lowerQuery))
+  );
+}
