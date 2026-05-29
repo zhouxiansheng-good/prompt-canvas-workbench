@@ -1,0 +1,27 @@
+{
+  "task_id": "bmad-mapping-demo",
+  "context_id": "demo-project-context-map-context",
+  "phase": "plan",
+  "created_at": "2026-05-13T01:27:13Z",
+  "updated_at": "2026-05-13T01:27:13Z",
+  "sources": [
+    {
+      "path": "examples\\bmad-mapping-demo\\project-context.md",
+      "exists": true,
+      "sha256": "e0f4810d215f21933155cde4855a9a95bc481dfc61f2b10644e9b7d91a42c8b3",
+      "size": 443,
+      "modified_at": "2026-05-13T01:26:40Z"
+    }
+  ],
+  "findings": [
+    "BMad project-context mapping recorded: demo-project-context-map"
+  ],
+  "actions": [
+    "Created .yunshu/bmad/demo-project-context-map.json"
+  ],
+  "decisions": [],
+  "gaps": [],
+  "next_read": [
+    "examples\\bmad-mapping-demo\\project-context.md"
+  ]
+}

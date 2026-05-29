@@ -1,0 +1,21 @@
+{
+  "task_id": "yunshu-v3-upgrade",
+  "checkpoint_id": "yunshu-v3-upgrade-plan-20260509-172336",
+  "phase": "plan",
+  "created_at": "2026-05-09T09:23:36Z",
+  "progress_summary": "完成云舒系统工具化骨架与适配层优化",
+  "completed": [
+    "新增CLI骨架",
+    "新增schema与adapter"
+  ],
+  "pending": [
+    "同步Trae副本"
+  ],
+  "key_decisions": [],
+  "critical_artifacts": [
+    "scripts/yunshu.py",
+    "adapters/trae/README.md"
+  ],
+  "known_risks": [],
+  "next_action": "执行Trae副本同步并复验"
+}

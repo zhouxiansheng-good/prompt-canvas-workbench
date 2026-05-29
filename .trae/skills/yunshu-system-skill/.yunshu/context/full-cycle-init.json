@@ -1,0 +1,43 @@
+{
+  "task_id": "yunshu-full-cycle-component-validation",
+  "context_id": "full-cycle-init",
+  "phase": "init",
+  "created_at": "2026-05-13T02:26:34Z",
+  "updated_at": "2026-05-13T02:26:34Z",
+  "sources": [
+    {
+      "path": "tmp-yunshu-full-cycle-demo\\docs\\task_card.md",
+      "exists": true,
+      "sha256": "efc1e9e09215f2d7fcfe2f7db1d0d51562fe0f09d95403817b0927b30aa3fec8",
+      "size": 836,
+      "modified_at": "2026-05-13T02:22:22Z"
+    },
+    {
+      "path": "tmp-yunshu-full-cycle-demo\\docs\\plan.md",
+      "exists": true,
+      "sha256": "354b86fe439937b883fe87823da7925e8f51d3e734a45240508742b9a8463cbe",
+      "size": 1208,
+      "modified_at": "2026-05-13T02:22:22Z"
+    },
+    {
+      "path": "tmp-yunshu-full-cycle-demo\\docs\\spec.md",
+      "exists": true,
+      "sha256": "817bbc39142d5a9aed076f6e76432a1469a73be61e2f8f58c33a4f02ec5e1c92",
+      "size": 590,
+      "modified_at": "2026-05-13T02:22:22Z"
+    }
+  ],
+  "findings": [
+    "01-init/02-plan artifacts created for a contained full-cycle demo."
+  ],
+  "actions": [
+    "Task card, plan, spec, and tasks are available under tmp-yunshu-full-cycle-demo/docs."
+  ],
+  "decisions": [],
+  "gaps": [
+    "07-subagent actual spawn is platform-gated in Codex without explicit subagent authorization."
+  ],
+  "next_read": [
+    "tmp-yunshu-full-cycle-demo/docs/tasks.md"
+  ]
+}

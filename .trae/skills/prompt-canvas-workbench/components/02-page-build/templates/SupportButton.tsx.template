@@ -1,0 +1,47 @@
+"use client";
+
+import { useState } from "react";
+
+export default function SupportButton() {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <>
+      <button
+        onClick={() => setShowModal(true)}
+        className="px-3 py-1 font-bold text-xs border-2 border-theme-border rounded bg-theme-canvas text-theme-text shadow-retro-sm hover:translate-y-[-1px] active:translate-y-0 transition-all"
+      >
+        赞赏支持
+      </button>
+
+      {showModal && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/50">
+          <div className="absolute inset-0" onClick={() => setShowModal(false)} />
+          <div className="relative w-72 bg-theme-paper border-2 border-theme-border rounded-xl p-5 text-center shadow-retro-lg z-10">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute right-3 top-2 text-sm font-bold text-theme-muted hover:text-theme-text"
+            >
+              ✕
+            </button>
+            <h3 className="text-sm font-bold font-serif text-theme-text mt-2">请作者喝杯咖啡</h3>
+            <p className="text-[11px] text-theme-muted mt-1 leading-relaxed">
+              您的自愿赞赏是让画板持续更新的唯一动力。
+            </p>
+            <div className="my-4 mx-auto w-40 h-40 border-2 border-theme-border bg-white rounded-lg p-1.5 shadow-inner">
+              <img
+                src="/赞赏码.jpg"
+                alt="微信赞赏码"
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  e.currentTarget.parentElement!.innerHTML = `<div class="text-[11px] text-gray-400 h-full flex items-center justify-center">期待放入赞赏码</div>`;
+                }}
+              />
+            </div>
+            <p className="text-[10px] font-mono text-theme-muted">金额随意 · 心意无价</p>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

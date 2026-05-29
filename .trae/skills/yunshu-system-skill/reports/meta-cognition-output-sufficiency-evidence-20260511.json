@@ -1,0 +1,53 @@
+{
+  "task_id": "meta-cognition-output-sufficiency",
+  "run_id": "accept-20260511-091700",
+  "status": "passed",
+  "created_at": "2026-05-11T01:17:00Z",
+  "dod_items": [
+    {
+      "id": "DOD-1",
+      "description": "研究用户提出的输出前自问提示是否有依据，并记录同类研究与项目。",
+      "status": "passed",
+      "evidence": [
+        "reports/meta-cognition-output-sufficiency-research-20260511.md"
+      ]
+    },
+    {
+      "id": "DOD-2",
+      "description": "将输出充分性门禁接入云舒全局入口、组件、子智能体和模板。",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/verification/verify-20260511-091454-888982-45824bfc.log",
+        ".yunshu/verification/verify-20260511-091454-916523-cfa993e1.log",
+        ".yunshu/verification/verify-20260511-091454-955948-72cc84ca.log",
+        ".yunshu/verification/verify-20260511-091454-989156-59cacde4.log",
+        ".yunshu/verification/verify-20260511-091455-096558-c4243b42.log"
+      ]
+    },
+    {
+      "id": "DOD-3",
+      "description": "云舒版本、链接、CLI语法和测试套件保持可验证通过。",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/verification/verify-20260511-091318-958603-69a157bb.log",
+        ".yunshu/verification/verify-20260511-091319-099263-2f561abf.log",
+        ".yunshu/verification/verify-20260511-091319-175519-9f55c20a.log",
+        ".yunshu/verification/verify-20260511-091339-659202-5e98c96c.log"
+      ]
+    },
+    {
+      "id": "DOD-4",
+      "description": "本轮调查与交付状态可通过上下文账本和检查点恢复。",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/context/meta-cognition-output-sufficiency-execute-20260511-091253.json",
+        ".yunshu/checkpoints/meta-cognition-output-sufficiency-deliver-20260511-091515/checkpoint.json"
+      ]
+    }
+  ],
+  "failure_capture": {
+    "notes": [
+      "两条输出充分性覆盖验证曾因 Windows shell 将管道符当作命令管道而失败；已拆分为多条更稳定的 rg 声明并重新验证通过。失败日志保留在 .yunshu/verify-log.tsv 中。"
+    ]
+  }
+}

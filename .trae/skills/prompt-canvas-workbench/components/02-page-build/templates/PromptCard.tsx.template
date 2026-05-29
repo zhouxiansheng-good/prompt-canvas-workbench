@@ -1,0 +1,133 @@
+"use client";
+
+import { useState, useRef } from "react";
+import Draggable from "react-draggable";
+import { Prompt } from "@/lib/prompts";
+
+interface PromptCardProps {
+  prompt: Prompt;
+  position: { x: number; y: number };
+  isOpen: boolean;
+  onClose: () => void;
+  onDrag: (x: number, y: number) => void;
+  zIndex: number;
+  onFocus: () => void;
+  isMobile?: boolean;
+}
+
+const typeConfig: Record<string, { label: string; tagBg: string; tagText: string }> = {
+  prompt: { label: "提示词", tagBg: "#ef4444", tagText: "#ffffff" },
+  persona: { label: "角色", tagBg: "#8b5cf6", tagText: "#ffffff" },
+  project: { label: "项目", tagBg: "#0ea5e9", tagText: "#ffffff" },
+  skill: { label: "技能", tagBg: "#ec4899", tagText: "#ffffff" },
+};
+
+export default function PromptCard({ prompt, position, isOpen, onClose, onDrag, zIndex, onFocus, isMobile }: PromptCardProps) {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  const nodeRef = useRef<HTMLDivElement>(null);
+
+  if (!isOpen) return null;
+
+  const cfg = typeConfig[prompt.type || "prompt"] || typeConfig.prompt;
+
+  const handleCopy = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(prompt.description);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const CardContent = () => (
+    <div
+      className={`rounded-xl border-2 border-theme-border bg-theme-paper shadow-retro-md flex flex-col ${isMobile ? 'w-full' : 'w-[330px]'}`}
+      style={isMobile ? {} : { zIndex, transition: 'box-shadow 0.15s ease' }}
+    >
+      <div
+        className="flex h-11 items-center justify-between px-3 border-b-2 border-theme-border bg-theme-card rounded-t-xl"
+        style={isMobile ? {} : { cursor: 'move' }}
+      >
+        <div className="flex items-center gap-2">
+          <span
+            className="text-[10px] font-bold px-1.5 py-0.5 rounded border border-theme-border"
+            style={{ backgroundColor: cfg.tagBg, color: cfg.tagText }}
+          >
+            {cfg.label}
+          </span>
+          <span className="text-xs font-bold font-mono truncate max-w-[140px] text-theme-text">
+            {prompt.title}
+          </span>
+        </div>
+
+        <div className="flex items-center gap-1 flex-shrink-0">
+          <button
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            className="px-1.5 py-0.5 text-[11px] font-bold border border-theme-border rounded bg-theme-paper hover:bg-theme-canvas"
+          >
+            {isCollapsed ? "展开" : "收起"}
+          </button>
+          <button
+            onClick={onClose}
+            className="w-5 h-5 flex items-center justify-center text-xs font-bold border border-theme-border rounded bg-theme-paper hover:bg-red-500 hover:text-white"
+          >
+            ✕
+          </button>
+        </div>
+      </div>
+
+      {!isCollapsed && (
+        <div className="p-4 bg-theme-paper rounded-b-xl flex-1 flex flex-col">
+          <p className="text-xs font-bold text-theme-muted mb-2 font-serif line-clamp-1 border-b border-dashed border-theme-border pb-1">
+            📌 {prompt.title}
+          </p>
+          
+          <div className="bg-theme-card border-2 border-theme-border rounded-lg p-3 text-xs font-mono text-theme-text max-h-36 overflow-y-auto leading-relaxed shadow-inner">
+            {prompt.description}
+          </div>
+
+          <div className="flex items-center justify-between mt-3 pt-2">
+            <span className="text-[10px] font-mono text-theme-muted">
+              ⏱️ {prompt.usageCount || 0} 次调取
+            </span>
+            <button
+              onClick={handleCopy}
+              className="text-xs font-bold px-3 py-1 border-2 border-theme-border rounded-md bg-theme-paper hover:translate-x-[-1px] hover:translate-y-[-1px] active:translate-x-0 active:translate-y-0 shadow-retro-sm transition-all text-theme-text"
+            >
+              {isCopied ? "💚 复制成功" : "复制模板"}
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  if (isMobile) {
+    return <CardContent />;
+  }
+
+  return (
+    <Draggable
+      nodeRef={nodeRef}
+      handle=".drag-handle"
+      defaultPosition={position}
+      onStart={onFocus}
+      onStop={(_e, data) => onDrag(data.x, data.y)}
+      scale={1}
+    >
+      <div
+        ref={nodeRef}
+        onMouseDown={onFocus}
+        className="absolute"
+        style={{ zIndex }}
+      >
+        <div className="drag-handle cursor-move">
+          <CardContent />
+        </div>
+      </div>
+    </Draggable>
+  );
+}

@@ -1,0 +1,56 @@
+{
+  "task_id": "local-yunshu-fusion-audit",
+  "run_id": "accept-20260513-2338",
+  "status": "passed",
+  "created_at": "2026-05-13T15:38:00Z",
+  "dod_items": [
+    {
+      "id": "DOD-1",
+      "description": "Skill and component metadata conform to current skill-creator validation rules.",
+      "status": "passed",
+      "evidence": [
+        "SKILL.md",
+        "components/01-init/SKILL.md",
+        "components/03-execute/webapp-testing/SKILL.md",
+        "components/07-subagent/SKILL.md",
+        "components/bmad-enhance/SKILL.md",
+        "agents/openai.yaml"
+      ]
+    },
+    {
+      "id": "DOD-2",
+      "description": "Version metadata stays consistent across the root package and adapter examples.",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/verification/verify-20260513-233400-474901-46e921a9.log",
+        "VERSION",
+        "adapters/codex/SKILL.md",
+        "adapters/trae/skill-config.example.json",
+        "tests/test_yunshu_cli.py"
+      ]
+    },
+    {
+      "id": "DOD-3",
+      "description": "Frontend design and webapp testing integrations are discoverable from the main README and 03-execute gates.",
+      "status": "passed",
+      "evidence": [
+        "README.md",
+        "SKILL.md",
+        "components/03-execute/gates.md",
+        "components/03-execute/frontend-design/README.md",
+        "components/03-execute/webapp-testing/SKILL.md"
+      ]
+    },
+    {
+      "id": "DOD-4",
+      "description": "The package passes regression, link, sync dry-run, and residual-pattern checks.",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/verification/verify-20260513-233400-466559-5e3e1e10.log",
+        ".yunshu/verification/verify-20260513-233400-583956-2de6fabd.log",
+        ".yunshu/verification/verify-20260513-233523-493461-d07aef17.log",
+        "reports/local-yunshu-fusion-audit-remediation-20260513.md"
+      ]
+    }
+  ]
+}

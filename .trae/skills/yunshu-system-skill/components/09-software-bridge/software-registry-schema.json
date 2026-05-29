@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://yunshu.system/schemas/software-registry.schema.json",
+  "title": "Yunshu Software Registry",
+  "description": "软件技能注册表 Schema。定义软件的CLI/API接口、命令模板和参数规范。",
+  "type": "object",
+  "required": ["software_id", "name", "version", "interfaces"],
+  "properties": {
+    "software_id": {
+      "type": "string",
+      "description": "软件唯一标识，使用 kebab-case",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "examples": ["hongye-municipal-road", "weidi-road", "autocad"]
+    },
+    "name": {
+      "type": "string",
+      "description": "软件显示名称"
+    },
+    "version": {
+      "type": "string",
+      "description": "支持的软件版本范围",
+      "examples": ["2024", ">=2023", "2022-2024"]
+    },
+    "description": {
+      "type": "string",
+      "description": "软件功能描述"
+    },
+    "platform": {
+      "type": "array",
+      "description": "支持的操作系统",
+      "items": {
+        "type": "string",
+        "enum": ["windows", "macos", "linux"]
+      }
+    },
+    "interfaces": {
+      "type": "object",
+      "description": "软件支持的接口类型",
+      "minProperties": 1,
+      "properties": {
+        "cli": {
+          "type": "object",
+          "description": "命令行接口配置",
+          "properties": {
+            "executable": {
+              "type": "string",
+              "description": "可执行文件路径或命令名"
+            },
+            "command_prefix": {
+              "type": "string",
+              "description": "命令前缀"
+            },
+            "working_directory": {
+              "type": "string",
+              "description": "默认工作目录"
+            }
+          }
+        },
+        "com": {
+          "type": "object",
+          "description": "COM自动化接口配置",
+          "properties": {
+            "prog_id": {
+              "type": "string",
+              "description": "COM组件的ProgID"
+            }
+          }
+        },
+        "api": {
+          "type": "object",
+          "description": "HTTP API接口配置",
+          "properties": {
+            "base_url": {
+              "type": "string",
+              "description": "API基础URL",
+              "format": "uri"
+            },
+            "authentication": {
+              "type": "object",
+              "description": "认证配置"
+            }
+          }
+        }
+      }
+    },
+    "command_templates": {
+      "type": "object",
+      "description": "命令模板定义",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["template", "parameters"],
+        "properties": {
+          "template": {
+            "type": "string",
+            "description": "命令模板，使用{parameter}占位符"
+          },
+          "description": {
+            "type": "string",
+            "description": "命令功能说明"
+          },
+          "parameters": {
+            "type": "object",
+            "description": "参数定义",
+            "additionalProperties": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "参数类型",
+                  "enum": ["string", "integer", "float", "boolean", "enum", "point", "array"]
+                },
+                "required": {
+                  "type": "boolean",
+                  "description": "是否必填",
+                  "default": true
+                },
+                "default": {
+                  "description": "默认值"
+                },
+                "choices": {
+                  "type": "array",
+                  "description": "枚举类型的可选值",
+                  "items": { "type": "string" }
+                },
+                "description": {
+                  "type": "string",
+                  "description": "参数说明"
+                }
+              }
+            }
+          },
+          "returns": {
+            "type": "string",
+            "description": "返回值说明"
+          },
+          "verification": {
+            "type": "object",
+            "description": "执行后的验证方法",
+            "properties": {
+              "method": {
+                "type": "string",
+                "enum": ["file_exists", "output_contains", "exit_code", "api_response"]
+              },
+              "criteria": {
+                "type": "string",
+                "description": "验证标准"
+              }
+            }
+          }
+        }
+      }
+    },
+    "context_mapping": {
+      "type": "object",
+      "description": "领域上下文到软件参数的映射规则",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "source_field": {
+            "type": "string",
+            "description": "领域上下文中的字段名"
+          },
+          "target_parameter": {
+            "type": "string",
+            "description": "软件命令参数名"
+          },
+          "transform": {
+            "type": "string",
+            "description": "转换规则",
+            "examples": ["direct", "enum_map", "format", "concatenate", "select"]
+          }
+        }
+      }
+    }
+  }
+}

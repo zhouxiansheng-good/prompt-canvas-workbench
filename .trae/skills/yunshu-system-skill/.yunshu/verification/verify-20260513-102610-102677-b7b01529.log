@@ -1,0 +1,9 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.8, pytest-9.0.2, pluggy-1.6.0
+rootdir: E:\traework\000 自动化工作流研究\yunshu-system-skill
+plugins: anyio-4.12.1
+collected 3 items
+
+tmp-yunshu-full-cycle-demo\tests\test_evidence_summary.py ...            [100%]
+
+============================== 3 passed in 0.03s ==============================

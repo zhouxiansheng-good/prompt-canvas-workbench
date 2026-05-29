@@ -1,0 +1,25 @@
+Source: E:\traework\000 自动化工作流研究\yunshu-system-skill
+Target: E:\traework\000 自动化工作流研究\.trae\skills\yunshu-system-skill
+Files to sync: 118
+Dry run only. Re-run with -Apply to copy files.
+  .gitignore
+  LICENSE
+  README.md
+  SKILL.md
+  VERSION
+  adapters\claude-code\README.md
+  adapters\codex\AGENTS.md.example
+  adapters\codex\automation-notes.md
+  adapters\codex\SKILL.md
+  adapters\trae\agent-install.md
+  adapters\trae\README.md
+  adapters\trae\skill-config.example.json
+  agents\openai.yaml
+  agents\yunshu-implementer\AGENT.md
+  agents\yunshu-quality-reviewer\AGENT.md
+  agents\yunshu-spec-reviewer\AGENT.md
+  components\01-init\SKILL.md
+  components\02-plan\gates.md
+  components\02-plan\SKILL.md
+  components\03-execute\debug.md
+  ... 98 more

@@ -1,0 +1,8 @@
+{
+  "gate_id": "gate-accept-to-deliver-yunshu-full-test-2026",
+  "phase": "deliver",
+  "checked_at": "2026-05-29T01:18:58Z",
+  "overall_status": "healthy",
+  "signals": [],
+  "recommendation": "continue"
+}

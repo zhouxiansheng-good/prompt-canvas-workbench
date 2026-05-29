@@ -1,0 +1,81 @@
+{
+  "task_id": "yunshu-full-test-2026",
+  "run_id": "accept-20260529-091800",
+  "status": "passed",
+  "created_at": "2026-05-29T09:18:00Z",
+  "dod_items": [
+    {
+      "id": "DOD-1",
+      "description": "01-init阶段完成并留下checkpoint",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/checkpoints/yunshu-full-test-2026-init-20260529-091040/checkpoint.json",
+        ".yunshu/context/yunshu-full-test-2026-init-20260529-091029.json"
+      ]
+    },
+    {
+      "id": "DOD-2",
+      "description": "02-plan阶段完成并留下checkpoint",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/checkpoints/yunshu-full-test-2026-plan-20260529-091130/checkpoint.json",
+        ".yunshu/context/yunshu-full-test-2026-plan-20260529-091119.json"
+      ]
+    },
+    {
+      "id": "DOD-3",
+      "description": "03-execute阶段完成并留下checkpoint",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/checkpoints/yunshu-full-test-2026-execute-20260529-091628/checkpoint.json",
+        ".yunshu/context/yunshu-full-test-2026-execute-20260529-091323.json"
+      ]
+    },
+    {
+      "id": "DOD-4",
+      "description": "04-accept阶段完成并留下checkpoint",
+      "status": "passed",
+      "evidence": [".yunshu/verification/acceptance_evidence_yunshu-full-test-2026.json"]
+    },
+    {
+      "id": "DOD-5",
+      "description": "05-deliver阶段完成并留下checkpoint",
+      "status": "passed",
+      "evidence": [".yunshu/tasks/yunshu-full-test-2026.json"]
+    },
+    {
+      "id": "DOD-6",
+      "description": "门控系统在每次阶段过渡时被强制执行",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/gates/gate-init-to-plan-yunshu-full-test-2026.json",
+        ".yunshu/gates/gate-plan-to-execute-yunshu-full-test-2026.json",
+        ".yunshu/gates/gate-execute-to-accept-yunshu-full-test-2026.json"
+      ]
+    },
+    {
+      "id": "DOD-7",
+      "description": "记忆系统三级读写正常",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/memory/short-term.json",
+        ".yunshu/memory/long-term.json",
+        ".yunshu/memory/permanent.json"
+      ]
+    },
+    {
+      "id": "DOD-8",
+      "description": "任务追踪全生命周期正常",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/tasks/yunshu-full-test-2026.json"
+      ]
+    }
+  ],
+  "failure_capture": {},
+  "code_quality": {
+    "py_compile": "passed",
+    "link_audit": "passed",
+    "issues": []
+  }
+}

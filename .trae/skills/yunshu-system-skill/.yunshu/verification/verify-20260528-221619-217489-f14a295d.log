@@ -1,0 +1,195 @@
+
+=== Yunshu Health Check ===
+Root: E:\traework\000 自动化工作流研究\yunshu-system-skill
+
+[root]
+  OK  SKILL.md
+  OK  VERSION
+  OK  README.md
+  OK  LICENSE
+
+[components/01-init]
+  OK  SKILL.md
+
+[components/02-plan]
+  OK  SKILL.md
+  OK  gates.md
+
+[components/03-execute]
+  OK  SKILL.md
+  OK  debug.md
+  OK  gates.md
+  OK  verify.md
+
+[components/03-execute/frontend-design]
+  OK  design-thinking.md
+  OK  aesthetic-checklist.md
+  OK  banned-patterns.md
+  OK  plan.md
+  OK  TASK_CARD.md
+  OK  ACCEPTANCE_REPORT.md
+  OK  CHANGE_REPORT.md
+  OK  README.md
+
+[components/03-execute/frontend-design/design-templates]
+  OK  brutalist.md
+  OK  maximalist.md
+  OK  minimal.md
+  OK  retro-futuristic.md
+
+[components/03-execute/webapp-testing]
+  OK  SKILL.md
+
+[components/03-execute/webapp-testing/examples]
+  OK  console_logging.py
+  OK  element_discovery.py
+  OK  static_html_automation.py
+
+[components/03-execute/webapp-testing/scripts]
+  OK  with_server.py
+
+[components/04-accept]
+  OK  SKILL.md
+  OK  gates.md
+
+[components/05-deliver]
+  OK  SKILL.md
+
+[components/06-recover]
+  OK  SKILL.md
+
+[components/07-subagent]
+  OK  SKILL.md
+  OK  dispatch.md
+
+[components/bmad-enhance]
+  OK  SKILL.md
+  OK  architecture-map.md
+  OK  bmad-cli-adapter.md
+  OK  party-mode-gate.md
+  OK  prd-map.md
+  OK  project-context-sync.md
+  OK  story-map.md
+
+[safeguards]
+  OK  agent-safety.md
+  OK  architecture.md
+  OK  bias-calibration.md
+  OK  chinese-dev.md
+  OK  code-quality.md
+  OK  cognition.md
+  OK  concurrency.md
+  OK  context.md
+  OK  database.md
+  OK  dependency-analysis.md
+  OK  dependency.md
+  OK  legacy.md
+  OK  maintenance.md
+  OK  meta-cognition.md
+  OK  microservice.md
+  OK  refactor.md
+  OK  security.md
+  OK  skill-preserve.md
+  OK  sustainability.md
+  OK  talent-pipeline.md
+  OK  team-norms.md
+  OK  team.md
+  OK  understanding.md
+  OK  vibe-coding.md
+
+[schemas]
+  OK  acceptance_evidence.schema.json
+  OK  bmad_mapping.schema.json
+  OK  checkpoint.schema.json
+  OK  context_ledger.schema.json
+
+[adapters/codex]
+  OK  SKILL.md
+  OK  AGENTS.md.example
+  OK  automation-notes.md
+
+[adapters/trae]
+  OK  README.md
+  OK  agent-install.md
+  OK  skill-config.example.json
+
+[adapters/claude-code]
+  OK  README.md
+
+[scripts]
+  OK  yunshu.py
+  OK  sync-trae.ps1
+  OK  yunshu-health.ps1
+
+[templates]
+  OK  acceptance_runbook.md
+  OK  bmad_architecture_map.md
+  OK  bmad_prd_map.md
+  OK  bmad_project_context.md
+  OK  bmad_story_map.md
+  OK  bug_knowledge.md
+  OK  change_report.md
+  OK  context_ledger.md
+  OK  debug_session.md
+  OK  gsd_project.md
+  OK  gsd_requirements.md
+  OK  gsd_roadmap.md
+  OK  gsd_state.md
+  OK  handoff.md
+  OK  phase_memory_card.md
+  OK  plan.md
+  OK  spec.md
+  OK  subagent_implementer.md
+  OK  subagent_quality_reviewer.md
+  OK  subagent_spec_reviewer.md
+  OK  tasks.md
+
+[agents/yunshu-implementer]
+  OK  AGENT.md
+
+[agents/yunshu-quality-reviewer]
+  OK  AGENT.md
+
+[agents/yunshu-spec-reviewer]
+  OK  AGENT.md
+
+[agents]
+  OK  openai.yaml
+
+[components/08-domain-guide]
+  OK  SKILL.md
+  OK  decision-tree-schema.json
+  OK  guide-engine.md
+  OK  atomic-task-criteria.md
+
+[components/08-domain-guide/examples/road-design]
+  OK  decision-tree.json
+
+[components/09-software-bridge]
+  OK  SKILL.md
+  OK  software-registry-schema.json
+  OK  command-builder.md
+  OK  execution-sandbox.md
+
+[components/09-software-bridge/registry]
+  OK  example-software.json
+
+[examples/bmad-mapping-demo]
+  OK  README.md
+  OK  PRD.md
+  OK  architecture.md
+  OK  project-context.md
+  OK  story-cli-evidence-dashboard.md
+
+[tests]
+  OK  test_yunshu_cli.py
+
+=== Summary ===
+  Total:  120
+  Passed: 120
+  Missing: 0
+
+=== Skill Metadata ===
+  SKILL.md files: 29
+  Metadata: passed
+

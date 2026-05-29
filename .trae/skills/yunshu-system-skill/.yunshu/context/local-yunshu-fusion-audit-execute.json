@@ -1,0 +1,144 @@
+{
+  "task_id": "local-yunshu-fusion-audit",
+  "context_id": "local-yunshu-fusion-audit-execute",
+  "phase": "execute",
+  "created_at": "2026-05-13T15:21:27Z",
+  "updated_at": "2026-05-13T15:21:27Z",
+  "sources": [
+    {
+      "path": "SKILL.md",
+      "exists": true,
+      "sha256": "c4521c485fca70527591cca786361e86b7575ccce3e76760220921b284669fb6",
+      "size": 18350,
+      "modified_at": "2026-05-13T14:34:28Z"
+    },
+    {
+      "path": "README.md",
+      "exists": true,
+      "sha256": "d593941d68b719e0782862f7f16d91d2c26e07eae0418d41c8ac8e6c47d8cb28",
+      "size": 29795,
+      "modified_at": "2026-05-13T01:32:14Z"
+    },
+    {
+      "path": "scripts/yunshu.py",
+      "exists": true,
+      "sha256": "be82e71be9f9785de93dc18601db0b369289f7cef323b8825cc7ac9423db65b9",
+      "size": 44771,
+      "modified_at": "2026-05-13T01:23:52Z"
+    },
+    {
+      "path": "tests/test_yunshu_cli.py",
+      "exists": true,
+      "sha256": "4e691c1b535235f1d48f1b2f4b4e28d95231791b708d568bee3d9fe6f6e85277",
+      "size": 10264,
+      "modified_at": "2026-05-13T01:24:37Z"
+    },
+    {
+      "path": "adapters/codex/SKILL.md",
+      "exists": true,
+      "sha256": "93724ee7ba716db1df60507499b5565490f977650fe89b3725ca116ffa0b3f26",
+      "size": 1818,
+      "modified_at": "2026-05-10T02:53:02Z"
+    },
+    {
+      "path": "adapters/trae/skill-config.example.json",
+      "exists": true,
+      "sha256": "26dcbb2fa802a77a1cfba911ef1c47524c1cec9350838557fc8c3941815da168",
+      "size": 1237,
+      "modified_at": "2026-05-10T02:53:27Z"
+    },
+    {
+      "path": "components/01-init/SKILL.md",
+      "exists": true,
+      "sha256": "24ce17fa27f16bae0dc1cd8ec495cd1656d4a89f2b03000ed42d25a8bfc4bb8a",
+      "size": 17048,
+      "modified_at": "2026-05-11T01:12:30Z"
+    },
+    {
+      "path": "components/02-plan/SKILL.md",
+      "exists": true,
+      "sha256": "b0a1f225cd91d10ca4d979dcd47ccdd232b5eaba174efd80477cde1a93e92ef0",
+      "size": 15453,
+      "modified_at": "2026-05-13T13:41:06Z"
+    },
+    {
+      "path": "components/03-execute/SKILL.md",
+      "exists": true,
+      "sha256": "7f2e293c36a94a99ea5cd032d1353f590043939d461ff6bc0b98f241442a23f5",
+      "size": 15088,
+      "modified_at": "2026-05-13T14:33:26Z"
+    },
+    {
+      "path": "components/03-execute/gates.md",
+      "exists": true,
+      "sha256": "bbd31a25ab1a9f4c45904f4e0cd60cfe63429e017e01d812eaba76ff1b19e9a0",
+      "size": 7765,
+      "modified_at": "2026-05-13T14:33:02Z"
+    },
+    {
+      "path": "components/03-execute/frontend-design/README.md",
+      "exists": true,
+      "sha256": "a30f6b7a012d6acc2ce2939ef842ca8de78bbe0a46a381f14a90df5935196ec7",
+      "size": 1751,
+      "modified_at": "2026-05-13T13:00:03Z"
+    },
+    {
+      "path": "components/03-execute/webapp-testing/SKILL.md",
+      "exists": true,
+      "sha256": "d1631236f8b9e1a623ccc9b61ed37025727177f497777839e2fb268df8a5e8e7",
+      "size": 3815,
+      "modified_at": "2026-05-13T14:28:48Z"
+    },
+    {
+      "path": "components/bmad-enhance/SKILL.md",
+      "exists": true,
+      "sha256": "04e590e2206de51c9bd500d18e57b3944aac5118f6db094c2a54e00f2b540a69",
+      "size": 6046,
+      "modified_at": "2026-05-13T01:26:03Z"
+    },
+    {
+      "path": "templates/subagent_implementer.md",
+      "exists": true,
+      "sha256": "f518b7323645fc36c9e6937a93bed80e5ec62ae76b4b403f992a43972c564ec4",
+      "size": 1304,
+      "modified_at": "2026-05-09T09:20:58Z"
+    },
+    {
+      "path": "templates/subagent_spec_reviewer.md",
+      "exists": true,
+      "sha256": "eefcb75da2a0ef02b334275e65865cd30da0cf3469b39bfb29195849798e4179",
+      "size": 1033,
+      "modified_at": "2026-05-09T09:20:58Z"
+    },
+    {
+      "path": "templates/subagent_quality_reviewer.md",
+      "exists": true,
+      "sha256": "85c777a076bd51589339ac586ee84019ff955594b4b89fdd1ce5559ed8416069",
+      "size": 1025,
+      "modified_at": "2026-05-09T09:20:58Z"
+    },
+    {
+      "path": "scripts/sync-trae.ps1",
+      "exists": true,
+      "sha256": "1025772da4b7fd5d5b5a76047750e79789313e902d931b899e8abd927a8c6f2c",
+      "size": 1689,
+      "modified_at": "2026-05-09T09:21:49Z"
+    }
+  ],
+  "findings": [
+    "本地包 version-check、audit links、pytest 通过，但 skill-creator quick_validate 因顶层 version/phase 失败",
+    "发现 adapter 示例版本为 3.4.0，与根版本 3.6.0 漂移，且 version-check 未覆盖 adapter",
+    "发现新增 frontend-design/webapp-testing 融合材料存在，但 README 架构导航未完整呈现，且临时验证目录仍在分发树",
+    "发现共享模板残留 Trae Task tool，组件残留 SearchCodebase/TodoWrite 等宿主特定词"
+  ],
+  "actions": [
+    "准备修复元数据、版本门禁、平台中立措辞、前端融合导航、同步排除与临时产物"
+  ],
+  "decisions": [],
+  "gaps": [
+    "当前不执行 sync-trae.ps1 -Apply，避免覆盖外部安装副本"
+  ],
+  "next_read": [
+    "修复后复跑 pytest、version-check、audit links、quick_validate、sync-trae dry-run、残留扫描"
+  ]
+}

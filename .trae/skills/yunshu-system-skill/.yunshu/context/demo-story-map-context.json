@@ -1,0 +1,35 @@
+{
+  "task_id": "bmad-mapping-demo",
+  "context_id": "demo-story-map-context",
+  "phase": "execute",
+  "created_at": "2026-05-13T01:27:13Z",
+  "updated_at": "2026-05-13T01:27:13Z",
+  "sources": [
+    {
+      "path": "examples\\bmad-mapping-demo\\story-cli-evidence-dashboard.md",
+      "exists": true,
+      "sha256": "6740a88259a2ecaa49d574757a22875a673b560d7b1331abea046dcb9fa48a2b",
+      "size": 649,
+      "modified_at": "2026-05-13T01:26:40Z"
+    },
+    {
+      "path": "examples\\bmad-mapping-demo\\project-context.md",
+      "exists": true,
+      "sha256": "e0f4810d215f21933155cde4855a9a95bc481dfc61f2b10644e9b7d91a42c8b3",
+      "size": 443,
+      "modified_at": "2026-05-13T01:26:40Z"
+    }
+  ],
+  "findings": [
+    "BMad story mapping recorded: demo-story-map"
+  ],
+  "actions": [
+    "Created .yunshu/bmad/demo-story-map.json"
+  ],
+  "decisions": [],
+  "gaps": [],
+  "next_read": [
+    "examples\\bmad-mapping-demo\\story-cli-evidence-dashboard.md",
+    "examples\\bmad-mapping-demo\\project-context.md"
+  ]
+}

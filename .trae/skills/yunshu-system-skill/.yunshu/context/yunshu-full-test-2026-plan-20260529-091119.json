@@ -1,0 +1,90 @@
+{
+  "task_id": "yunshu-full-test-2026",
+  "context_id": "yunshu-full-test-2026-plan-20260529-091119",
+  "phase": "plan",
+  "created_at": "2026-05-29T01:11:19Z",
+  "updated_at": "2026-05-29T01:11:19Z",
+  "sources": [
+    {
+      "path": "components/02-plan/SKILL.md",
+      "exists": true,
+      "sha256": "0fbe8b6fd8c17e2b9f8751a1f7f03392fcea9d9d9ded678e7e2625875cf9f5c0",
+      "size": 16922,
+      "modified_at": "2026-05-28T13:02:19Z"
+    },
+    {
+      "path": "components/03-execute/SKILL.md",
+      "exists": true,
+      "sha256": "9b896a5e59f809e3171820f2bd30e0f930dc2dd360da93d55ea6734b2fd7184d",
+      "size": 17470,
+      "modified_at": "2026-05-28T13:07:34Z"
+    },
+    {
+      "path": "components/04-accept/SKILL.md",
+      "exists": true,
+      "sha256": "4f145c1ec5b7727cd5a6f45227973ddb90d21a95b517639b59a32c0daca05120",
+      "size": 14769,
+      "modified_at": "2026-05-28T13:03:48Z"
+    },
+    {
+      "path": "components/05-deliver/SKILL.md",
+      "exists": true,
+      "sha256": "e5ba1ac083b411a3cd10b745f319a9359cb87cfba54a002a5bea797d61b3c4be",
+      "size": 11141,
+      "modified_at": "2026-05-28T13:07:50Z"
+    },
+    {
+      "path": "components/06-recover/SKILL.md",
+      "exists": true,
+      "sha256": "e9d1d2894ee712786b5e4fc909b133a50595edad6ce497a5cdfd6c2d10d958e8",
+      "size": 12736,
+      "modified_at": "2026-05-29T00:35:02Z"
+    },
+    {
+      "path": "components/07-subagent/SKILL.md",
+      "exists": true,
+      "sha256": "7e2127ff612de9c9da85283ca6aa67fd403ed7156e0b441ab86e04f672e2d0e5",
+      "size": 19082,
+      "modified_at": "2026-05-28T13:05:03Z"
+    },
+    {
+      "path": "components/08-domain-guide/SKILL.md",
+      "exists": true,
+      "sha256": "367830e6d3930a8156a64c84e639efbef195836b79249ebc07fb2acc8d8b9444",
+      "size": 5872,
+      "modified_at": "2026-05-28T13:56:32Z"
+    },
+    {
+      "path": "components/09-software-bridge/SKILL.md",
+      "exists": true,
+      "sha256": "038ef02f304bc71dfd88337d071f35edbb3532fa468a68c26710221314b118c7",
+      "size": 7107,
+      "modified_at": "2026-05-28T14:00:08Z"
+    },
+    {
+      "path": "components/bmad-enhance/SKILL.md",
+      "exists": true,
+      "sha256": "8a531b428944a49ecfe13555b9bd1e8bcd9498d127d2cfbe7c21190079273b45",
+      "size": 7000,
+      "modified_at": "2026-05-28T13:06:39Z"
+    }
+  ],
+  "findings": [
+    "共9个组件需要测试：01-init, 02-plan, 03-execute, 04-accept, 05-deliver, 06-recover, 07-subagent, 08-domain-guide, 09-software-bridge, bmad-enhance",
+    "额外功能需测试：gate, memory, task, health, verify, validate, audit, version-check"
+  ],
+  "actions": [
+    "制定全量测试计划",
+    "确认所有组件文件存在且可读"
+  ],
+  "decisions": [],
+  "gaps": [
+    "需测试GPT新增的防跳过机制（gate transition）是否已实际实现"
+  ],
+  "next_read": [
+    "scripts/yunshu.py 中 gate transition 命令实现"
+  ],
+  "associated_checkpoints": [
+    "yunshu-full-test-2026-init-20260529-091040"
+  ]
+}

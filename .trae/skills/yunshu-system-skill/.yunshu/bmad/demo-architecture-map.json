@@ -1,0 +1,37 @@
+{
+  "task_id": "bmad-mapping-demo",
+  "map_id": "demo-architecture-map",
+  "kind": "architecture",
+  "created_at": "2026-05-13T01:27:13Z",
+  "updated_at": "2026-05-13T01:27:13Z",
+  "sources": [
+    {
+      "path": "examples\\bmad-mapping-demo\\architecture.md",
+      "exists": true,
+      "sha256": "724ad87ffea0a675240154245a8b687a011acc466a98a440e252acbd7b58ce45",
+      "size": 806,
+      "modified_at": "2026-05-13T01:26:40Z"
+    }
+  ],
+  "sections": [
+    {
+      "path": "examples\\bmad-mapping-demo\\architecture.md",
+      "headings": [
+        "1:Architecture: CLI Evidence Dashboard",
+        "2:Components",
+        "3:Evidence Reader",
+        "3:Summary Renderer",
+        "2:Interfaces",
+        "3:Command",
+        "2:Decisions",
+        "3:ADR-001: Keep the dashboard read-only",
+        "2:Testing"
+      ]
+    }
+  ],
+  "gaps": [],
+  "next_read": [
+    "examples\\bmad-mapping-demo\\architecture.md"
+  ],
+  "context_id": "demo-architecture-map-context"
+}

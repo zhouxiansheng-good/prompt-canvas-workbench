@@ -1,0 +1,37 @@
+{
+  "task_id": "yunshu-full-cycle-component-validation",
+  "checkpoint_id": "yunshu-full-cycle-component-validation-deliver-20260513-102911",
+  "phase": "deliver",
+  "created_at": "2026-05-13T02:29:11Z",
+  "progress_summary": "Full Yunshu workflow validation completed with demo implementation, acceptance evidence, component audit, and recovery proof.",
+  "completed": [
+    "01-init task card",
+    "02-plan plan/spec/tasks",
+    "bmad-enhance mapping freshness check",
+    "03-execute red/green implementation",
+    "04-accept structured evidence",
+    "05-deliver report",
+    "06-recover checkpoint resume and validate"
+  ],
+  "pending": [
+    "Optional real BMad artifact calibration"
+  ],
+  "key_decisions": [
+    "System is usable",
+    "07-subagent remains Codex authorization-gated"
+  ],
+  "critical_artifacts": [
+    "reports/full-cycle-component-validation-20260513.md",
+    "tmp-yunshu-full-cycle-demo/acceptance_evidence.json",
+    ".yunshu/verify-log.tsv"
+  ],
+  "known_risks": [
+    "Synthetic demo may not expose all real BMad document shape differences"
+  ],
+  "next_action": "Review report or run calibration with real BMad artifacts.",
+  "context_ledger": ".yunshu/context/full-cycle-accept.json",
+  "context_records": [
+    "full-cycle-accept",
+    "full-cycle-init"
+  ]
+}

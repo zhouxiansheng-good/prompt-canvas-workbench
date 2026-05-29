@@ -1,0 +1,193 @@
+{
+  "contexts": [
+    {
+      "context_id": "yunshu-interaction-test-2026-init-20260529-092955",
+      "task_id": "yunshu-interaction-test-2026",
+      "phase": "init",
+      "updated_at": "2026-05-29T01:29:55Z",
+      "path": ".yunshu/context/yunshu-interaction-test-2026-init-20260529-092955.json"
+    },
+    {
+      "context_id": "yunshu-full-test-2026-subagent-20260529-092221",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "subagent",
+      "updated_at": "2026-05-29T01:22:21Z",
+      "path": ".yunshu/context/yunshu-full-test-2026-subagent-20260529-092221.json"
+    },
+    {
+      "context_id": "yunshu-full-test-2026-recover-20260529-092042",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "recover",
+      "updated_at": "2026-05-29T01:20:42Z",
+      "path": ".yunshu/context/yunshu-full-test-2026-recover-20260529-092042.json"
+    },
+    {
+      "context_id": "yunshu-full-test-2026-deliver-20260529-091953",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "deliver",
+      "updated_at": "2026-05-29T01:19:53Z",
+      "path": ".yunshu/context/yunshu-full-test-2026-deliver-20260529-091953.json"
+    },
+    {
+      "context_id": "yunshu-full-test-2026-accept-20260529-091843",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "accept",
+      "updated_at": "2026-05-29T01:18:43Z",
+      "path": ".yunshu/context/yunshu-full-test-2026-accept-20260529-091843.json"
+    },
+    {
+      "context_id": "yunshu-full-test-2026-execute-20260529-091323",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "execute",
+      "updated_at": "2026-05-29T01:13:23Z",
+      "path": ".yunshu/context/yunshu-full-test-2026-execute-20260529-091323.json"
+    },
+    {
+      "context_id": "yunshu-full-test-2026-prd-20260529-091303-context",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "plan",
+      "updated_at": "2026-05-29T01:13:03Z",
+      "path": ".yunshu/context/yunshu-full-test-2026-prd-20260529-091303-context.json"
+    },
+    {
+      "context_id": "yunshu-full-test-2026-plan-20260529-091119",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "plan",
+      "updated_at": "2026-05-29T01:11:19Z",
+      "path": ".yunshu/context/yunshu-full-test-2026-plan-20260529-091119.json"
+    },
+    {
+      "context_id": "yunshu-full-test-2026-init-20260529-091029",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "init",
+      "updated_at": "2026-05-29T01:10:29Z",
+      "path": ".yunshu/context/yunshu-full-test-2026-init-20260529-091029.json"
+    },
+    {
+      "context_id": "test-task-001-init-20260528-231112",
+      "task_id": "test-task-001",
+      "phase": "init",
+      "updated_at": "2026-05-28T15:11:12Z",
+      "path": ".yunshu/context/test-task-001-init-20260528-231112.json"
+    },
+    {
+      "context_id": "yunshu-system-component-remediation-20260528-deliver",
+      "task_id": "yunshu-system-component-remediation-20260528",
+      "phase": "deliver",
+      "updated_at": "2026-05-28T14:22:33Z",
+      "path": ".yunshu/context/yunshu-system-component-remediation-20260528-deliver.json"
+    },
+    {
+      "context_id": "yunshu-component-audit-20260527-accept",
+      "task_id": "yunshu-component-audit-20260527",
+      "phase": "accept",
+      "updated_at": "2026-05-27T02:26:53Z",
+      "path": ".yunshu/context/yunshu-component-audit-20260527-accept.json"
+    },
+    {
+      "context_id": "local-yunshu-fusion-audit-deliver",
+      "task_id": "local-yunshu-fusion-audit",
+      "phase": "deliver",
+      "updated_at": "2026-05-13T15:45:59Z",
+      "path": ".yunshu/context/local-yunshu-fusion-audit-deliver.json"
+    },
+    {
+      "context_id": "local-yunshu-fusion-audit-execute",
+      "task_id": "local-yunshu-fusion-audit",
+      "phase": "execute",
+      "updated_at": "2026-05-13T15:21:27Z",
+      "path": ".yunshu/context/local-yunshu-fusion-audit-execute.json"
+    },
+    {
+      "context_id": "full-cycle-deliver",
+      "task_id": "yunshu-full-cycle-component-validation",
+      "phase": "deliver",
+      "updated_at": "2026-05-13T02:29:11Z",
+      "path": ".yunshu/context/full-cycle-deliver.json"
+    },
+    {
+      "context_id": "full-cycle-accept",
+      "task_id": "yunshu-full-cycle-component-validation",
+      "phase": "accept",
+      "updated_at": "2026-05-13T02:27:31Z",
+      "path": ".yunshu/context/full-cycle-accept.json"
+    },
+    {
+      "context_id": "full-cycle-init",
+      "task_id": "yunshu-full-cycle-component-validation",
+      "phase": "init",
+      "updated_at": "2026-05-13T02:26:34Z",
+      "path": ".yunshu/context/full-cycle-init.json"
+    },
+    {
+      "context_id": "bmad-yunshu-enhancement-v1-deliver-20260513-093316",
+      "task_id": "bmad-yunshu-enhancement-v1",
+      "phase": "deliver",
+      "updated_at": "2026-05-13T01:33:16Z",
+      "path": ".yunshu/context/bmad-yunshu-enhancement-v1-deliver-20260513-093316.json"
+    },
+    {
+      "context_id": "bmad-yunshu-enhancement-v1-deliver-20260513-093116",
+      "task_id": "bmad-yunshu-enhancement-v1",
+      "phase": "deliver",
+      "updated_at": "2026-05-13T01:31:16Z",
+      "path": ".yunshu/context/bmad-yunshu-enhancement-v1-deliver-20260513-093116.json"
+    },
+    {
+      "context_id": "demo-prd-map-context",
+      "task_id": "bmad-mapping-demo",
+      "phase": "plan",
+      "updated_at": "2026-05-13T01:27:13Z",
+      "path": ".yunshu/context/demo-prd-map-context.json"
+    },
+    {
+      "context_id": "demo-architecture-map-context",
+      "task_id": "bmad-mapping-demo",
+      "phase": "plan",
+      "updated_at": "2026-05-13T01:27:13Z",
+      "path": ".yunshu/context/demo-architecture-map-context.json"
+    },
+    {
+      "context_id": "demo-story-map-context",
+      "task_id": "bmad-mapping-demo",
+      "phase": "execute",
+      "updated_at": "2026-05-13T01:27:13Z",
+      "path": ".yunshu/context/demo-story-map-context.json"
+    },
+    {
+      "context_id": "demo-project-context-map-context",
+      "task_id": "bmad-mapping-demo",
+      "phase": "plan",
+      "updated_at": "2026-05-13T01:27:13Z",
+      "path": ".yunshu/context/demo-project-context-map-context.json"
+    },
+    {
+      "context_id": "bmad-yunshu-enhancement-v1-execute-20260513-091517",
+      "task_id": "bmad-yunshu-enhancement-v1",
+      "phase": "execute",
+      "updated_at": "2026-05-13T01:15:17Z",
+      "path": ".yunshu/context/bmad-yunshu-enhancement-v1-execute-20260513-091517.json"
+    },
+    {
+      "context_id": "meta-cognition-output-sufficiency-execute-20260511-091253",
+      "task_id": "meta-cognition-output-sufficiency",
+      "phase": "deliver",
+      "updated_at": "2026-05-11T01:16:34Z",
+      "path": ".yunshu/context/meta-cognition-output-sufficiency-execute-20260511-091253.json"
+    },
+    {
+      "context_id": "yunshu-context-ledger-flow-test",
+      "task_id": "yunshu-context-ledger",
+      "phase": "accept",
+      "updated_at": "2026-05-10T03:05:29Z",
+      "path": ".yunshu/context/yunshu-context-ledger-flow-test.json"
+    },
+    {
+      "context_id": "yunshu-context-ledger-deliver",
+      "task_id": "yunshu-context-ledger",
+      "phase": "deliver",
+      "updated_at": "2026-05-10T02:55:45Z",
+      "path": ".yunshu/context/yunshu-context-ledger-deliver.json"
+    }
+  ]
+}

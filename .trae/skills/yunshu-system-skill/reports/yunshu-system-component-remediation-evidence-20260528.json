@@ -1,0 +1,56 @@
+{
+  "task_id": "yunshu-system-component-remediation-20260528",
+  "run_id": "accept-20260528-221620",
+  "status": "passed",
+  "created_at": "2026-05-28T14:16:20Z",
+  "dod_items": [
+    {
+      "id": "DOD-001",
+      "description": "All declared Yunshu components and active SKILL.md entries are covered by a health gate.",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/verification/verify-20260528-221619-217489-f14a295d.log"
+      ]
+    },
+    {
+      "id": "DOD-002",
+      "description": "Markdown links and version metadata are consistent after remediation.",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/verification/verify-20260528-221209-673797-0e255c7f.log",
+        ".yunshu/verification/verify-20260528-221209-899704-c28577d5.log"
+      ]
+    },
+    {
+      "id": "DOD-003",
+      "description": "Yunshu CLI behavior remains covered by regression tests and compile checks.",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/verification/verify-20260528-221209-910441-f8d9eeb6.log",
+        ".yunshu/verification/verify-20260528-221409-036730-b67be6da.log"
+      ]
+    },
+    {
+      "id": "DOD-004",
+      "description": "Defect report documents fixed redundancy, metadata gaps, generated artifacts, cross-platform wording, and file-scale assessment.",
+      "status": "passed",
+      "evidence": [
+        "reports/yunshu-system-component-remediation-20260528.md"
+      ]
+    }
+  ],
+  "failure_capture": {
+    "non_product_failures": [
+      {
+        "claim": "Enhanced health gate passes",
+        "evidence": ".yunshu/verification/verify-20260528-221209-658173-8a4a1d5f.log",
+        "cause": "Health gate ran concurrently with pytest, which generated cache directories during the scan."
+      },
+      {
+        "claim": "Enhanced health gate passes after cache cleanup",
+        "evidence": ".yunshu/verification/verify-20260528-221409-021107-c8e1a265.log",
+        "cause": "Health gate ran concurrently with py_compile, which generated scripts/__pycache__ during the scan."
+      }
+    ]
+  }
+}

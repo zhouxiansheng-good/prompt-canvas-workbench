@@ -1,0 +1,9 @@
+reports\meta-cognition-output-sufficiency-research-20260511.md:1:# 元认知输出充分性研究报告
+reports\meta-cognition-output-sufficiency-research-20260511.md:30:| 工程化工作流 | [obra/superpowers](https://github.com/obra/superpowers) | 已有项目把澄清、计划、TDD、审查、验证做成 agentic skills；云舒可在此基础上加入中文化、检查点、上下文账本和输出充分性 |
+reports\meta-cognition-output-sufficiency-research-20260511.md:63:| 流程 | 输出充分性标准 |
+templates\spec.md:90:- [ ] 输出充分性通过：执行者不需要猜测目标、边界、证据或下一步
+templates\change_report.md:88:## 输出充分性核查
+templates\plan.md:108:- [ ] 输出充分性通过：结论、依据、风险、验证、下一步足够执行者继续行动
+safeguards\meta-cognition.md:33:【输出充分性四问】—— 发给用户前检查是否答全、证据足、下一步清楚
+safeguards\meta-cognition.md:125:## 输出充分性四问
+safeguards\meta-cognition.md:228:| 全局 | 任何用户可见输出前 | 输出充分性四问 |

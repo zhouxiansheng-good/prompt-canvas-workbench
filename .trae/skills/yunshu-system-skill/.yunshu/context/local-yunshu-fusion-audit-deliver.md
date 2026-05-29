@@ -1,0 +1,81 @@
+# Yunshu Context: local-yunshu-fusion-audit-deliver
+
+- task_id: local-yunshu-fusion-audit
+- phase: deliver
+- created_at: 2026-05-13T15:41:49Z
+- updated_at: 2026-05-13T15:45:59Z
+
+## Sources
+
+- SKILL.md — sha256=6726ca12307913964f072b04a4ad53b5cb347863999cc4f694e574ff69c75cfc exists=True
+- README.md — sha256=54b679dffe785a40208632ad2f71d11787be1f8746b9abe19795dd38e707e964 exists=True
+- scripts/yunshu.py — sha256=4ef917fa16acb2022382f7bd0119ac802567e326ca76cc2736c9ebea38d27038 exists=True
+- tests/test_yunshu_cli.py — sha256=71c027e8580586108aa989ec8b087d4239fb767ef630c292e11fa1760845ecbb exists=True
+- adapters/codex/SKILL.md — sha256=8a0718875b5ecd23758bd1eeaca7ad2447dd470a97f81e5f27f315b0d6bf388a exists=True
+- adapters/trae/skill-config.example.json — sha256=494bb3662a26153b27cb0ce6e6da21800fd83f90b0d4237d8f5e5fae5325ddec exists=True
+- agents/openai.yaml — sha256=95b3b0e82d6f423a26cc92f87c71bef093f0e1669081db71a1de7e04db6dcda7 exists=True
+- components/01-init/SKILL.md — sha256=7c45a2d9039361a52cce6c699433e59b0b209776cb4813c7916517142eaa9f75 exists=True
+- components/02-plan/SKILL.md — sha256=bd5a8e5028e864e7607ab3dec071b8d88ac5079a56b059c6e71d9098f6c0a6ed exists=True
+- components/03-execute/SKILL.md — sha256=d18aaee81de4e8552ed70d1540d3c43aa9ebae7f5e4a2832fce2eb387b034245 exists=True
+- components/03-execute/gates.md — sha256=bbd31a25ab1a9f4c45904f4e0cd60cfe63429e017e01d812eaba76ff1b19e9a0 exists=True
+- components/03-execute/frontend-design/README.md — sha256=a30f6b7a012d6acc2ce2939ef842ca8de78bbe0a46a381f14a90df5935196ec7 exists=True
+- components/03-execute/webapp-testing/SKILL.md — sha256=d1631236f8b9e1a623ccc9b61ed37025727177f497777839e2fb268df8a5e8e7 exists=True
+- components/bmad-enhance/SKILL.md — sha256=0dc8c18ae5fcdb4a8ca216678fd5bde29d2ff3a75b22df15ab53cd96328891f7 exists=True
+- templates/subagent_implementer.md — sha256=a0b327f636aa73bd6fbd2bdf0265773beab1f64c7d2e32eadf741b4987ed8a0d exists=True
+- templates/subagent_spec_reviewer.md — sha256=7a141760e9201ad1d351afedfebddacdfb9cc034898b83025a9c968982662947 exists=True
+- templates/subagent_quality_reviewer.md — sha256=a726c9ffdd636dd8d7ef80d989cb32efb1ad75ea45c45ded1d4b3384fb10370c exists=True
+- scripts/sync-trae.ps1 — sha256=a87fec52be9be5e49d5bd21e6b9ea6ea0c9b4607a8abcc9219a240d7cfec1fd6 exists=True
+- reports/local-yunshu-fusion-audit-remediation-20260513.md — sha256=73d7e8c92c262609084bd254e5f670310695818c1e4f9e014c68a1b447817710 exists=True
+- reports/local-yunshu-fusion-audit-evidence-20260513.json — sha256=7104f9d178f2d9bab25b3bffc58761e2fbb78f252c7acd52a38da4f320abc501 exists=True
+- README.md — sha256=96bf1bec62f5d5a2d4cc601eb18e3038f993ea832e29b12ce66cd5ae8634899c exists=True
+- agents/openai.yaml — sha256=95b3b0e82d6f423a26cc92f87c71bef093f0e1669081db71a1de7e04db6dcda7 exists=True
+
+## Findings
+
+- 本地包已完成元数据修复、版本门禁扩展、平台中立措辞清理、前端设计与 webapp-testing 融合路标补齐
+- quick_validate、version-check、audit links、pytest、verify run、组件级 quick_validate 全部通过
+- tmp-yunshu-* 和缓存目录已清理并加入同步排除，未执行 -Apply 以避免覆盖外部安装副本
+- 最终补齐 README 中 agents/openai.yaml 的目录导航
+
+## Actions
+
+- 刷新 deliver context 以覆盖最终 README 状态
+
+## Decisions
+
+- 前端能力作为 03-execute 的按需增强，不改变云舒主流程
+- BMad 作为可选上下文增强层，不替代验收证据链和三类子智能体
+
+## Gaps
+
+- 当前只做 dry-run 同步；如果发布到 Trae，需要在目标副本复跑 version-check 与 audit links
+
+## Next Read
+
+- 如需发布到 Trae，执行 scripts/sync-trae.ps1 -Apply 后在目标副本复跑 version-check 与 audit links
+- 如需发布到 Trae，执行 scripts/sync-trae.ps1 -Apply 后在目标副本复跑 version-check 与 audit links
+
+## Freshness
+
+- SKILL.md: fresh
+- README.md: stale
+- scripts/yunshu.py: fresh
+- tests/test_yunshu_cli.py: fresh
+- adapters/codex/SKILL.md: fresh
+- adapters/trae/skill-config.example.json: fresh
+- agents/openai.yaml: fresh
+- components/01-init/SKILL.md: fresh
+- components/02-plan/SKILL.md: fresh
+- components/03-execute/SKILL.md: fresh
+- components/03-execute/gates.md: fresh
+- components/03-execute/frontend-design/README.md: fresh
+- components/03-execute/webapp-testing/SKILL.md: fresh
+- components/bmad-enhance/SKILL.md: fresh
+- templates/subagent_implementer.md: fresh
+- templates/subagent_spec_reviewer.md: fresh
+- templates/subagent_quality_reviewer.md: fresh
+- scripts/sync-trae.ps1: fresh
+- reports/local-yunshu-fusion-audit-remediation-20260513.md: fresh
+- reports/local-yunshu-fusion-audit-evidence-20260513.json: fresh
+- README.md: fresh
+- agents/openai.yaml: fresh

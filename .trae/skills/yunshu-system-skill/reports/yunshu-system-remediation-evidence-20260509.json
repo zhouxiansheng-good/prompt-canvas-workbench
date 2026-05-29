@@ -1,0 +1,97 @@
+{
+  "task_id": "yunshu-system-remediation",
+  "run_id": "remediation-20260509-193700",
+  "status": "passed",
+  "created_at": "2026-05-09T11:37:00Z",
+  "dod_items": [
+    {
+      "id": "DOD-1",
+      "description": "verify run can preserve non-ASCII and undecodable command output as evidence on Windows",
+      "status": "passed",
+      "evidence": [
+        "scripts/yunshu.py",
+        "tests/test_yunshu_cli.py",
+        ".yunshu/verification/verify-20260509-193657-696642-1cd781b7.log",
+        ".yunshu/verification/verify-20260509-193647-225409-fc64b70b.log"
+      ]
+    },
+    {
+      "id": "DOD-2",
+      "description": "structured evidence validation rejects missing local evidence paths, empty required strings, and invalid created_at values",
+      "status": "passed",
+      "evidence": [
+        "scripts/yunshu.py",
+        "tests/test_yunshu_cli.py",
+        ".yunshu/verification/verify-20260509-193647-225409-fc64b70b.log"
+      ]
+    },
+    {
+      "id": "DOD-3",
+      "description": "checkpoint validation enforces non-empty required strings, ISO created_at values, phase enums, and non-empty array items",
+      "status": "passed",
+      "evidence": [
+        "scripts/yunshu.py",
+        "tests/test_yunshu_cli.py",
+        ".yunshu/verification/verify-20260509-193647-225409-fc64b70b.log"
+      ]
+    },
+    {
+      "id": "DOD-4",
+      "description": "Codex adapter restrictions are explicitly higher priority than the generic subagent routing rule",
+      "status": "passed",
+      "evidence": [
+        "SKILL.md",
+        "adapters/codex/SKILL.md",
+        "components/02-plan/SKILL.md",
+        "components/03-execute/SKILL.md",
+        "components/07-subagent/SKILL.md"
+      ]
+    },
+    {
+      "id": "DOD-5",
+      "description": "checkpoint recovery now treats phase_memory.json as the machine source of truth and keeps old handoff files as fallback only",
+      "status": "passed",
+      "evidence": [
+        "components/01-init/SKILL.md",
+        "components/03-execute/SKILL.md",
+        "components/06-recover/SKILL.md",
+        "templates/phase_memory_card.md"
+      ]
+    },
+    {
+      "id": "DOD-6",
+      "description": "documentation is synchronized for safeguard count, meta-cognition, and task-appropriate fresh verification evidence",
+      "status": "passed",
+      "evidence": [
+        "README.md",
+        "SKILL.md",
+        "components/03-execute/SKILL.md",
+        "components/04-accept/SKILL.md",
+        ".yunshu/verification/verify-20260509-193648-557188-f3c64af6.log"
+      ]
+    },
+    {
+      "id": "DOD-7",
+      "description": "release gates pass after remediation",
+      "status": "passed",
+      "evidence": [
+        ".yunshu/verification/verify-20260509-193647-225409-fc64b70b.log",
+        ".yunshu/verification/verify-20260509-193647-749245-05f3206b.log",
+        ".yunshu/verification/verify-20260509-193648-178155-de29b6df.log",
+        ".yunshu/verification/verify-20260509-193648-557188-f3c64af6.log",
+        ".yunshu/verification/verify-20260509-193907-466570-c6fb50ba.log",
+        ".yunshu/verify-log.tsv"
+      ]
+    },
+    {
+      "id": "DOD-8",
+      "description": "remediation report records fixes, verification evidence, and residual limitations",
+      "status": "passed",
+      "evidence": [
+        "reports/yunshu-system-remediation-report-20260509.md",
+        "reports/yunshu-system-remediation-evidence-20260509.json"
+      ]
+    }
+  ],
+  "failure_capture": {}
+}
