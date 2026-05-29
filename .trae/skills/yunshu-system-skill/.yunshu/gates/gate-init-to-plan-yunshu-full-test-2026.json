@@ -1,8 +1,0 @@
-{
-  "gate_id": "gate-init-to-plan-yunshu-full-test-2026",
-  "phase": "plan",
-  "checked_at": "2026-05-29T01:10:49Z",
-  "overall_status": "healthy",
-  "signals": [],
-  "recommendation": "continue"
-}
