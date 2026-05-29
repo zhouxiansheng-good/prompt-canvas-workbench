@@ -1,0 +1,53 @@
+# Yunshu Handoff: yunshu-system-remediation-deliver-20260509-194027
+
+- task_id: yunshu-system-remediation
+- checkpoint_id: yunshu-system-remediation-deliver-20260509-194027
+- phase: deliver
+- created_at: 2026-05-09T11:40:27Z
+
+## Summary
+
+已根据完整验证报告修复云舒系统关键问题，补强证据捕获、结构化校验、adapter 优先级、恢复事实源和交付证据。
+
+## Completed
+
+- 修复 verify run 中文与异常字节输出捕获
+- 补强 evidence/checkpoint 校验
+- 同步 adapter/subagent/恢复/TDD 文档口径
+- 新增单元测试
+- 生成修复报告和结构化证据
+- 最终门禁通过
+
+## Pending
+
+- 后续可继续把 safeguards 做成 hook/CI/状态机强制门禁
+- 可增强 sync-trae 目标副本复验
+- 可清理上层旧副本和历史报告
+
+## Decisions
+
+- Codex adapter 限制优先于通用 subagent 路由
+- phase_memory.json 是机器恢复唯一事实来源
+- 文档/配置/流程任务使用合适的新鲜验证证据而非强制 TDD
+
+## Artifacts
+
+- reports/yunshu-system-remediation-report-20260509.md
+- reports/yunshu-system-remediation-evidence-20260509.json
+- scripts/yunshu.py
+- tests/test_yunshu_cli.py
+- .yunshu/verify-log.tsv
+
+## Risks
+
+- safeguards 尚未全部机器强制化
+- 工作区上层存在旧副本可能干扰阅读
+- 未执行 sync-trae.ps1 -Apply
+
+## Next Action
+
+如需发布到 Trae 安装副本，先运行 scripts/sync-trae.ps1 dry-run，确认后再 -Apply 并在目标副本复跑 version-check 与 audit links。
+
+## Resume Prompt
+
+使用云舒系统，从 checkpoint_id=yunshu-system-remediation-deliver-20260509-194027 恢复继续执行；以 phase_memory 为唯一历史事实来源。

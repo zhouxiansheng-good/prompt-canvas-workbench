@@ -1,0 +1,41 @@
+{
+  "task_id": "yunshu-full-test-2026",
+  "checkpoint_id": "yunshu-full-test-2026-deliver-20260529-092002",
+  "phase": "deliver",
+  "created_at": "2026-05-29T01:20:02Z",
+  "summary": "05-deliver交付完成：变更报告、验收证据、回滚方案已生成",
+  "completed": [
+    "DOD-1",
+    "DOD-2",
+    "DOD-3",
+    "DOD-4",
+    "DOD-5",
+    "DOD-6",
+    "DOD-7",
+    "DOD-8"
+  ],
+  "pending": [
+    "06-recover测试",
+    "07-subagent测试",
+    "08-domain-guide测试",
+    "09-software-bridge测试",
+    "BMad测试",
+    "safeguards测试"
+  ],
+  "decisions": [],
+  "artifacts": [
+    "change_report_yunshu-full-test-2026.md, acceptance_evidence_yunshu-full-test-2026.json"
+  ],
+  "risks": [],
+  "next_action": "继续测试06-recover及剩余子组件",
+  "context_ledger": ".yunshu/context/yunshu-full-test-2026-deliver-20260529-091953.json",
+  "context_records": [
+    "yunshu-full-test-2026-deliver-20260529-091953",
+    "yunshu-full-test-2026-accept-20260529-091843",
+    "yunshu-full-test-2026-execute-20260529-091323",
+    "yunshu-full-test-2026-prd-20260529-091303-context",
+    "yunshu-full-test-2026-plan-20260529-091119",
+    "yunshu-full-test-2026-init-20260529-091029"
+  ],
+  "gate_status": "passed"
+}

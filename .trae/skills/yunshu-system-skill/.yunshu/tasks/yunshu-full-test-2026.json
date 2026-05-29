@@ -1,0 +1,80 @@
+{
+  "task_id": "yunshu-full-test-2026",
+  "goal": "全量测试云舒系统所有组件和功能",
+  "phase": "init",
+  "status": "active",
+  "created_at": "2026-05-29T01:10:19Z",
+  "updated_at": "2026-05-29T01:12:34Z",
+  "dod_items": [
+    {
+      "id": "DOD-1",
+      "description": "DoD-1: 01-init阶段完成并留下checkpoint",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "DOD-2",
+      "description": "DoD-2: 02-plan阶段完成并留下checkpoint",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "DOD-3",
+      "description": "DoD-3: 03-execute阶段完成并留下checkpoint",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "DOD-4",
+      "description": "DoD-4: 04-accept阶段完成并留下checkpoint",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "DOD-5",
+      "description": "DoD-5: 05-deliver阶段完成并留下checkpoint",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "DOD-6",
+      "description": "DoD-6: 门控系统在每次阶段过渡时被强制执行",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "DOD-7",
+      "description": "DoD-7: 记忆系统三级读写正常",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "DOD-8",
+      "description": "DoD-8: 任务追踪全生命周期正常",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "completed_steps": [
+    "记忆系统: 三级读写测试"
+  ],
+  "pending_steps": [
+    "01-init: 需求澄清与任务卡生成",
+    "02-plan: 计划规范与风险评估",
+    "03-execute: 串行执行与证据化验证",
+    "04-accept: 两阶段审查与DoD验证",
+    "05-deliver: 变更报告与交付归档",
+    "06-recover: 检查点恢复测试",
+    "07-subagent: 子智能体分派模拟",
+    "08-domain-guide: 决策树引导测试",
+    "09-software-bridge: 软件技能匹配测试",
+    "BMad增强: PRD/架构映射测试",
+    "safeguards: 安全防护触发测试",
+    "门控系统: 阶段过渡强制检查测试",
+    "健康检查: 全量状态审计测试",
+    "记忆系统测试完成"
+  ],
+  "blocked_by": [],
+  "context_ledger": "",
+  "latest_checkpoint": ""
+}

@@ -1,0 +1,17 @@
+# AGENTS.md Example For Yunshu In Codex
+
+## Yunshu Default Strategy
+
+- Use Yunshu for multi-phase, resume-sensitive, or verification-heavy work.
+- Before deep work, check `.yunshu/checkpoints/index.json`.
+- Use `python scripts/yunshu.py checkpoint create` before major handoffs.
+- Use `python scripts/yunshu.py verify run` for claims that need durable evidence.
+- Run `python scripts/yunshu.py version-check` and `python scripts/yunshu.py audit links`
+  before delivering changes to the Yunshu package.
+
+## Platform Notes
+
+- Codex does not provide Trae's `AskUserQuestion`; ask concise questions only
+  when a reasonable assumption would be risky.
+- Codex subagents require explicit user authorization.
+- The source of truth for resume is `.yunshu/checkpoints/<id>/phase_memory.json`.

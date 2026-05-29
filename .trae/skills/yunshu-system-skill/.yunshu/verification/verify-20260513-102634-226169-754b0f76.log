@@ -1,0 +1,21 @@
+map_id: demo-prd-map
+task_id: bmad-mapping-demo
+kind: prd
+mapping: E:\traework\000 自动化工作流研究\yunshu-system-skill\.yunshu\bmad\demo-prd-map.json
+examples\bmad-mapping-demo\PRD.md: fresh
+map_id: demo-architecture-map
+task_id: bmad-mapping-demo
+kind: architecture
+mapping: E:\traework\000 自动化工作流研究\yunshu-system-skill\.yunshu\bmad\demo-architecture-map.json
+examples\bmad-mapping-demo\architecture.md: fresh
+map_id: demo-story-map
+task_id: bmad-mapping-demo
+kind: story
+mapping: E:\traework\000 自动化工作流研究\yunshu-system-skill\.yunshu\bmad\demo-story-map.json
+examples\bmad-mapping-demo\story-cli-evidence-dashboard.md: fresh
+examples\bmad-mapping-demo\project-context.md: fresh
+map_id: demo-project-context-map
+task_id: bmad-mapping-demo
+kind: project-context
+mapping: E:\traework\000 自动化工作流研究\yunshu-system-skill\.yunshu\bmad\demo-project-context-map.json
+examples\bmad-mapping-demo\project-context.md: fresh

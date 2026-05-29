@@ -1,0 +1,23 @@
+{
+  "gate_id": "gate-accept-to-deliver-test",
+  "kind": "transition",
+  "task_id": "yunshu-full-test-2026",
+  "from_phase": "accept",
+  "to_phase": "deliver",
+  "checked_at": "2026-05-29T01:22:08Z",
+  "context_id": "yunshu-full-test-2026-recover-20260529-092042",
+  "context_fresh": true,
+  "artifacts": {
+    "task_card": ".yunshu/tasks/yunshu-full-test-2026.json",
+    "plan": "components/02-plan/SKILL.md",
+    "spec": "components/04-accept/SKILL.md",
+    "verification": ".yunshu/verification/acceptance_evidence_yunshu-full-test-2026.json"
+  },
+  "user_aligned": true,
+  "dod_confirmed": true,
+  "warnings": [
+    "task phase is init, transition requested from accept"
+  ],
+  "errors": [],
+  "overall_status": "passed"
+}

@@ -1,0 +1,3 @@
+agents\yunshu-spec-reviewer\AGENT.md:195:output_sufficiency: <审查报告是否足够控制器判断通过/返工；如否，缺什么>
+agents\yunshu-quality-reviewer\AGENT.md:224:output_sufficiency: <审查报告是否足够控制器判断通过/返工；如否，缺什么>
+agents\yunshu-implementer\AGENT.md:237:output_sufficiency: <是否已给出控制器继续判断所需的全部信息；如否，缺什么>

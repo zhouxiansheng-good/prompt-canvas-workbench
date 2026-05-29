@@ -1,0 +1,32 @@
+{
+  "task_id": "yunshu-context-ledger",
+  "checkpoint_id": "yunshu-context-ledger-deliver-20260510-105557",
+  "phase": "deliver",
+  "created_at": "2026-05-10T02:55:57Z",
+  "summary": "完成上下文可复现账本优化并通过验证",
+  "completed": [
+    "实现 context ledger CLI",
+    "更新云舒流程文档与模板",
+    "补充单元测试并通过版本/链接门禁"
+  ],
+  "pending": [
+    "后续可增加 git diff 自动 source 收集"
+  ],
+  "decisions": [
+    "checkpoint 管恢复，context ledger 管调查复现"
+  ],
+  "artifacts": [
+    ".yunshu/context/yunshu-context-ledger-deliver.json",
+    "scripts/yunshu.py",
+    "components/01-init/SKILL.md",
+    "components/06-recover/SKILL.md"
+  ],
+  "risks": [
+    "目录指纹目前只覆盖直接子项名称，深层变化需后续增强"
+  ],
+  "next_action": "下次继续优化时先运行 context show/status yunshu-context-ledger-deliver",
+  "context_ledger": ".yunshu/context/yunshu-context-ledger-deliver.json",
+  "context_records": [
+    "yunshu-context-ledger-deliver"
+  ]
+}

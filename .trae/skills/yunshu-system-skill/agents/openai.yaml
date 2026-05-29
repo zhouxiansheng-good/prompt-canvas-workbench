@@ -1,0 +1,6 @@
+interface:
+  display_name: "Yunshu System"
+  short_description: "Evidence-driven development workflow"
+  default_prompt: "Use $yunshu-system-skill to plan, implement, validate, and hand off a complex development task with evidence."
+policy:
+  allow_implicit_invocation: true

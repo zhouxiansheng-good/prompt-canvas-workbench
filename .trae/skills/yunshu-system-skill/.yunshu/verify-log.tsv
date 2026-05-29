@@ -1,0 +1,69 @@
+timestamp	status	claim	command	exit_code	evidence
+2026-05-09T09:24:49Z	passed	Yunshu VERSION, SKILL.md, README.md are consistent	python scripts\yunshu.py version-check	0	.yunshu\verification\verify-20260509-172448.log
+2026-05-09T09:24:49Z	failed	Yunshu CLI has valid Python syntax	python -m py_compile scripts\yunshu.py	1	.yunshu\verification\verify-20260509-172448.log
+2026-05-09T09:24:49Z	passed	Yunshu Markdown internal links are valid	python scripts\yunshu.py audit links	0	.yunshu\verification\verify-20260509-172448.log
+2026-05-09T09:27:40Z	passed	Yunshu Markdown internal links are valid after docs update	python scripts\yunshu.py audit links	0	.yunshu\verification\verify-20260509-172739-969575-5b994371.log
+2026-05-09T09:27:40Z	passed	Yunshu VERSION, SKILL.md, README.md are consistent after CLI fix	python scripts\yunshu.py version-check	0	.yunshu\verification\verify-20260509-172739-987574-ceb77d0d.log
+2026-05-09T09:27:40Z	passed	Yunshu CLI has valid Python syntax	python -m py_compile scripts\yunshu.py	0	.yunshu\verification\verify-20260509-172740-132740-3f450e49.log
+2026-05-09T09:51:53Z	passed	DOD-1 version consistency gate passes	python scripts\yunshu.py version-check	0	.yunshu\verification\verify-20260509-175152-669951-5d0ead24.log
+2026-05-09T09:52:47Z	passed	DOD-2 markdown link audit passes	python scripts\yunshu.py audit links	0	.yunshu\verification\verify-20260509-175246-928191-9ae04bb3.log
+2026-05-09T09:52:56Z	passed	DOD-3 existing checkpoint validates	python scripts\yunshu.py validate checkpoint .yunshu\checkpoints\yunshu-v3-upgrade-plan-20260509-172336\checkpoint.json	0	.yunshu\verification\verify-20260509-175256-441259-de3d55d9.log
+2026-05-09T09:54:04Z	passed	DOD-4 checkpoint resume prints recovery authority	python scripts\yunshu.py checkpoint resume yunshu-v3-upgrade-plan-20260509-172336	0	.yunshu\verification\verify-20260509-175404-694453-dcd935cc.log
+2026-05-09T10:05:22Z	passed	DOD-5 yunshu CLI has valid Python syntax	python -m py_compile scripts\yunshu.py	0	.yunshu\verification\verify-20260509-180521-571218-f9185aba.log
+2026-05-09T10:05:43Z	passed	DOD-6 sync-trae dry-run enumerates release files	powershell -ExecutionPolicy Bypass -File scripts\sync-trae.ps1	0	.yunshu\verification\verify-20260509-180541-432516-33a08eaa.log
+2026-05-09T10:12:39Z	failed	DOD-7 sync-trae dry-run can be captured when PowerShell output is redirected	powershell -NoProfile -ExecutionPolicy Bypass -File scripts\sync-trae.ps1 *> .yunshu\verification\sync-trae-dry-run-redirected.log	1	.yunshu\verification\verify-20260509-181237-356242-d5b33c7c.log
+2026-05-09T10:13:50Z	passed	BUG-1 verify run captures non-ASCII PowerShell output	powershell -NoProfile -Command Write-Output 中文输出	0	.yunshu\verification\verify-20260509-181348-374239-cdee5d2f.log
+2026-05-09T10:14:06Z	passed	BUG-1 control: verify run captures ASCII command output	powershell -NoProfile -Command Write-Output ascii-output	0	.yunshu\verification\verify-20260509-181404-495473-f5506cea.log
+2026-05-09T11:30:28Z	passed	BUG-1 verify run captures non-ASCII PowerShell output after fix	powershell -NoProfile -Command Write-Output 中文输出	0	.yunshu\verification\verify-20260509-193025-390581-c0452217.log
+2026-05-09T11:33:30Z	passed	Remediation tests pass	python -m unittest discover -s tests -v	0	.yunshu\verification\verify-20260509-193330-465817-b6334a0d.log
+2026-05-09T11:33:31Z	passed	Remediation version check passes	python scripts\yunshu.py version-check	0	.yunshu\verification\verify-20260509-193330-977093-6ee456e5.log
+2026-05-09T11:33:31Z	passed	Remediation markdown links pass	python scripts\yunshu.py audit links	0	.yunshu\verification\verify-20260509-193331-423211-f14df489.log
+2026-05-09T11:33:33Z	passed	Remediation evidence validates	python scripts\yunshu.py validate evidence reports\yunshu-system-audit-acceptance-evidence-20260509.json	0	.yunshu\verification\verify-20260509-193333-090048-df3ac3ed.log
+2026-05-09T11:36:47Z	passed	REMEDIATION unit tests pass	python -m unittest discover -s tests -v	0	.yunshu\verification\verify-20260509-193647-225409-fc64b70b.log
+2026-05-09T11:36:47Z	passed	REMEDIATION yunshu.py compiles	python -m py_compile scripts\yunshu.py	0	.yunshu\verification\verify-20260509-193647-749245-05f3206b.log
+2026-05-09T11:36:48Z	passed	REMEDIATION version metadata stays consistent	python scripts\yunshu.py version-check	0	.yunshu\verification\verify-20260509-193648-178155-de29b6df.log
+2026-05-09T11:36:48Z	passed	REMEDIATION markdown internal links pass	python scripts\yunshu.py audit links	0	.yunshu\verification\verify-20260509-193648-557188-f3c64af6.log
+2026-05-09T11:37:00Z	passed	REMEDIATION verify run captures Chinese PowerShell output	powershell -NoProfile -Command Write-Output 中文输出	0	.yunshu\verification\verify-20260509-193657-696642-1cd781b7.log
+2026-05-09T11:39:07Z	passed	REMEDIATION structured evidence validates	python scripts\yunshu.py validate evidence reports\yunshu-system-remediation-evidence-20260509.json	0	.yunshu\verification\verify-20260509-193907-466570-c6fb50ba.log
+2026-05-11T01:13:19Z	passed	版本号已更新且 VERSION/SKILL/README 一致	python scripts\yunshu.py version-check	0	.yunshu/verification/verify-20260511-091318-958603-69a157bb.log
+2026-05-11T01:13:19Z	passed	Markdown 内链未被新增报告和门禁修改破坏	python scripts\yunshu.py audit links	0	.yunshu/verification/verify-20260511-091319-099263-2f561abf.log
+2026-05-11T01:13:19Z	passed	云舒 CLI 语法仍可编译	python -m py_compile scripts\yunshu.py	0	.yunshu/verification/verify-20260511-091319-175519-9f55c20a.log
+2026-05-11T01:13:21Z	failed	输出充分性门禁已接入全局、组件、子智能体和模板	powershell -NoProfile -Command " rg -n 输出充分性|output_sufficiency SKILL.md README.md safeguards components agents templates reports\	1	.yunshu/verification/verify-20260511-091319-280720-11404749.log
+2026-05-11T01:13:40Z	passed	测试套件仍通过	python -m pytest tests	0	.yunshu/verification/verify-20260511-091339-659202-5e98c96c.log
+2026-05-11T01:14:25Z	failed	输出充分性门禁已接入全局、组件、子智能体和模板	rg -n 输出充分性|output_sufficiency SKILL.md README.md safeguards components agents templates reports	255	.yunshu/verification/verify-20260511-091424-966461-77ab9590.log
+2026-05-11T01:14:54Z	passed	README 记录输出充分性门禁	rg -n 输出充分性 README.md	0	.yunshu/verification/verify-20260511-091454-888982-45824bfc.log
+2026-05-11T01:14:54Z	passed	全局入口记录输出充分性门禁	rg -n 输出充分性 SKILL.md	0	.yunshu/verification/verify-20260511-091454-916523-cfa993e1.log
+2026-05-11T01:14:55Z	passed	组件文件记录输出充分性门禁	rg -n 输出充分性 components	0	.yunshu/verification/verify-20260511-091454-955948-72cc84ca.log
+2026-05-11T01:14:55Z	passed	子智能体返回格式包含 output_sufficiency	rg -n output_sufficiency agents	0	.yunshu/verification/verify-20260511-091454-989156-59cacde4.log
+2026-05-11T01:14:55Z	passed	模板和研究报告记录输出充分性门禁	rg -n 输出充分性 templates reports safeguards	0	.yunshu/verification/verify-20260511-091455-096558-c4243b42.log
+2026-05-11T01:16:34Z	passed	输出充分性结构化验收证据可校验	python scripts\yunshu.py validate evidence reports\meta-cognition-output-sufficiency-evidence-20260511.json	0	.yunshu/verification/verify-20260511-091634-636706-d05429fc.log
+2026-05-13T01:14:47Z	passed	BMad enhance Markdown links pass	python scripts\yunshu.py audit links	0	.yunshu/verification/verify-20260513-091447-124499-7d6b2853.log
+2026-05-13T01:14:47Z	passed	Yunshu package version is consistent at 3.5.0	python scripts\yunshu.py version-check	0	.yunshu/verification/verify-20260513-091447-224805-001be024.log
+2026-05-13T01:14:47Z	passed	Yunshu CLI regression tests pass after BMad enhance docs	python -m pytest tests	0	.yunshu/verification/verify-20260513-091447-286076-9d1630b7.log
+2026-05-13T01:30:31Z	passed	BMad enhancement links pass after P1/P2	python scripts\yunshu.py audit links	0	.yunshu/verification/verify-20260513-093031-276729-1edbc9a9.log
+2026-05-13T01:30:31Z	passed	Yunshu package version is consistent at 3.6.0	python scripts\yunshu.py version-check	0	.yunshu/verification/verify-20260513-093031-312728-31624230.log
+2026-05-13T01:30:31Z	passed	BMad demo mappings validate	python scripts\yunshu.py bmad validate .yunshu\bmad\demo-prd-map.json && python scripts\yunshu.py bmad validate .yunshu\bmad\demo-architecture-map.json && python scripts\yunshu.py bmad validate .yunshu\bmad\demo-story-map.json && python scripts\yunshu.py bmad validate .yunshu\bmad\demo-project-context-map.json	0	.yunshu/verification/verify-20260513-093031-375728-103cb990.log
+2026-05-13T01:30:31Z	passed	Yunshu CLI tests pass with BMad mapping commands	python -m pytest tests	0	.yunshu/verification/verify-20260513-093031-347727-a8ec9f72.log
+2026-05-13T02:25:19Z	failed	RED: evidence summary tests fail before implementation	python -m pytest tmp-yunshu-full-cycle-demo/tests/test_evidence_summary.py	2	.yunshu/verification/verify-20260513-102518-435224-dd67bd46.log
+2026-05-13T02:26:10Z	passed	Gate: Yunshu links pass during full cycle demo	python scripts\yunshu.py audit links	0	.yunshu/verification/verify-20260513-102610-468033-a4045660.log
+2026-05-13T02:26:10Z	passed	Gate: Yunshu version remains 3.6.0 during full cycle demo	python scripts\yunshu.py version-check	0	.yunshu/verification/verify-20260513-102610-512191-05a3d8e2.log
+2026-05-13T02:26:10Z	passed	GREEN: evidence summary demo tests pass	python -m pytest tmp-yunshu-full-cycle-demo/tests/test_evidence_summary.py	0	.yunshu/verification/verify-20260513-102610-102677-b7b01529.log
+2026-05-13T02:26:11Z	passed	Regression: Yunshu CLI tests still pass	python -m pytest tests	0	.yunshu/verification/verify-20260513-102610-341322-6cecd807.log
+2026-05-13T02:26:34Z	passed	BMad mapping status remains fresh during full cycle demo	python scripts\yunshu.py bmad status demo-prd-map && python scripts\yunshu.py bmad status demo-architecture-map && python scripts\yunshu.py bmad status demo-story-map && python scripts\yunshu.py bmad status demo-project-context-map	0	.yunshu/verification/verify-20260513-102634-226169-754b0f76.log
+2026-05-13T02:27:31Z	passed	Acceptance evidence validates for full cycle demo	python scripts\yunshu.py validate evidence tmp-yunshu-full-cycle-demo\acceptance_evidence.json	0	.yunshu/verification/verify-20260513-102731-443659-1eba9254.log
+2026-05-13T02:29:11Z	passed	Full-cycle component validation report links pass	python scripts\yunshu.py audit links	0	.yunshu/verification/verify-20260513-102911-572672-1b53d1e1.log
+2026-05-13T15:34:00Z	passed	Local Yunshu version metadata and adapter examples are consistent	python scripts\yunshu.py version-check	0	.yunshu/verification/verify-20260513-233400-474901-46e921a9.log
+2026-05-13T15:34:00Z	passed	Local Yunshu Markdown links are valid	python scripts\yunshu.py audit links	0	.yunshu/verification/verify-20260513-233400-583956-2de6fabd.log
+2026-05-13T15:34:01Z	passed	Local Yunshu CLI unit tests pass	pytest -q	0	.yunshu/verification/verify-20260513-233400-466559-5e3e1e10.log
+2026-05-13T15:35:25Z	passed	Local Trae sync dry-run excludes generated state	powershell -ExecutionPolicy Bypass -File scripts\sync-trae.ps1	0	.yunshu/verification/verify-20260513-233523-493461-d07aef17.log
+2026-05-27T02:25:36Z	passed	Yunshu source package regression gates pass	python -m pytest tests -q	0	.yunshu/verification/verify-20260527-102535-763733-eeeaf2b9.log
+2026-05-27T02:25:36Z	passed	Yunshu source version gate passes	python scripts/yunshu.py version-check	0	.yunshu/verification/verify-20260527-102536-447642-ccabdcfe.log
+2026-05-27T02:25:36Z	passed	Yunshu source link audit passes	python scripts/yunshu.py audit links	0	.yunshu/verification/verify-20260527-102536-618642-cccaeb5f.log
+2026-05-28T14:12:09Z	passed	Markdown link audit passes	python scripts/yunshu.py audit links	0	.yunshu/verification/verify-20260528-221209-673797-0e255c7f.log
+2026-05-28T14:12:10Z	passed	Version metadata is consistent	python scripts/yunshu.py version-check	0	.yunshu/verification/verify-20260528-221209-899704-c28577d5.log
+2026-05-28T14:12:10Z	passed	Yunshu CLI tests pass	pytest -q	0	.yunshu/verification/verify-20260528-221209-910441-f8d9eeb6.log
+2026-05-28T14:12:11Z	failed	Enhanced health gate passes	powershell -NoProfile -ExecutionPolicy Bypass -File scripts\yunshu-health.ps1	1	.yunshu/verification/verify-20260528-221209-658173-8a4a1d5f.log
+2026-05-28T14:14:09Z	passed	Yunshu CLI compiles	python -m py_compile scripts\yunshu.py	0	.yunshu/verification/verify-20260528-221409-036730-b67be6da.log
+2026-05-28T14:14:10Z	failed	Enhanced health gate passes after cache cleanup	powershell -NoProfile -ExecutionPolicy Bypass -File scripts\yunshu-health.ps1	1	.yunshu/verification/verify-20260528-221409-021107-c8e1a265.log
+2026-05-28T14:16:20Z	passed	Enhanced health gate passes in clean tree	powershell -NoProfile -ExecutionPolicy Bypass -File scripts\yunshu-health.ps1	0	.yunshu/verification/verify-20260528-221619-217489-f14a295d.log
+2026-05-29T01:12:44Z	passed	yunshu.py 脚本语法正确	python -m py_compile scripts/yunshu.py	0	.yunshu/verification/verify-20260529-091243-929064-22d8da87.log

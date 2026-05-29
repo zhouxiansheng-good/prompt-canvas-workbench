@@ -1,0 +1,357 @@
+{
+  "domain_id": "road-design",
+  "version": "1.0.0",
+  "name": "道路设计",
+  "description": "市政道路与公路设计的领域细分引导",
+  "keywords": ["道路", "市政", "公路", "路基", "路面", "给排水", "交通", "设计"],
+  "levels": [
+    {
+      "level": 1,
+      "name": "道路类型",
+      "description": "请选择道路的类型",
+      "selection_mode": "single",
+      "choices": [
+        {
+          "id": "municipal",
+          "name": "市政道路",
+          "description": "城市道路系统，包括快速路、主干路、次干路、支路",
+          "next_level": 2,
+          "constraints": ["适用《城市道路工程设计规范》CJJ 37-2012"],
+          "context_inject": {
+            "road_category": "municipal",
+            "primary_code": "CJJ 37-2012"
+          },
+          "software_skills": ["hongye-municipal-road"]
+        },
+        {
+          "id": "highway",
+          "name": "公路",
+          "description": "公路交通系统，包括高速、一级、二级、三级、四级公路",
+          "next_level": 2,
+          "constraints": ["适用《公路工程技术标准》JTG B01-2014"],
+          "context_inject": {
+            "road_category": "highway",
+            "primary_code": "JTG B01-2014"
+          },
+          "software_skills": ["weidi-road"]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "name": "道路等级",
+      "description": "请选择道路的等级",
+      "selection_mode": "single",
+      "parent_level": 1,
+      "choices": [
+        {
+          "id": "express",
+          "name": "快速路",
+          "parent_filter": ["municipal"],
+          "description": "中央分隔、全部控制出入的城市道路",
+          "next_level": 3,
+          "constraints": ["设计速度 60-100 km/h", "双向 4-8 车道"],
+          "context_inject": {
+            "design_speed": [60, 80, 100],
+            "lane_count": [4, 6, 8],
+            "road_grade": "express"
+          }
+        },
+        {
+          "id": "arterial",
+          "name": "主干路",
+          "parent_filter": ["municipal"],
+          "description": "连接城市各主要分区的城市道路",
+          "next_level": 3,
+          "constraints": ["设计速度 40-60 km/h", "双向 4-6 车道"],
+          "context_inject": {
+            "design_speed": [40, 50, 60],
+            "lane_count": [4, 6],
+            "road_grade": "arterial"
+          }
+        },
+        {
+          "id": "sub-arterial",
+          "name": "次干路",
+          "parent_filter": ["municipal"],
+          "description": "与主干路结合组成干路网的城市道路",
+          "next_level": 3,
+          "constraints": ["设计速度 30-50 km/h", "双向 2-4 车道"],
+          "context_inject": {
+            "design_speed": [30, 40, 50],
+            "lane_count": [2, 4],
+            "road_grade": "sub-arterial"
+          }
+        },
+        {
+          "id": "local",
+          "name": "支路",
+          "parent_filter": ["municipal"],
+          "description": "解决局部交通的城市道路",
+          "next_level": 3,
+          "constraints": ["设计速度 20-40 km/h", "双向 2 车道"],
+          "context_inject": {
+            "design_speed": [20, 30, 40],
+            "lane_count": [2],
+            "road_grade": "local"
+          }
+        },
+        {
+          "id": "highway-express",
+          "name": "高速公路",
+          "parent_filter": ["highway"],
+          "description": "专供汽车分向、分车道行驶的多车道公路",
+          "next_level": 3,
+          "constraints": ["设计速度 80-120 km/h", "双向 4-8 车道"],
+          "context_inject": {
+            "design_speed": [80, 100, 120],
+            "lane_count": [4, 6, 8],
+            "road_grade": "highway-express"
+          }
+        },
+        {
+          "id": "highway-class1",
+          "name": "一级公路",
+          "parent_filter": ["highway"],
+          "description": "供汽车分向、分车道行驶的多车道公路",
+          "next_level": 3,
+          "constraints": ["设计速度 60-100 km/h", "双向 4-6 车道"],
+          "context_inject": {
+            "design_speed": [60, 80, 100],
+            "lane_count": [4, 6],
+            "road_grade": "highway-class1"
+          }
+        },
+        {
+          "id": "highway-class2",
+          "name": "二级公路",
+          "parent_filter": ["highway"],
+          "description": "供汽车行驶的双车道公路",
+          "next_level": 3,
+          "constraints": ["设计速度 40-80 km/h", "双向 2 车道"],
+          "context_inject": {
+            "design_speed": [40, 60, 80],
+            "lane_count": [2],
+            "road_grade": "highway-class2"
+          }
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "name": "专业方向",
+      "description": "请选择设计的专业方向",
+      "selection_mode": "single",
+      "parent_level": 1,
+      "choices": [
+        {
+          "id": "pavement",
+          "name": "路面工程",
+          "parent_filter": ["municipal", "highway"],
+          "description": "路面结构设计、材料选择、厚度计算",
+          "next_level": 4,
+          "constraints": ["需考虑交通荷载", "材料性能指标"],
+          "context_inject": {
+            "specialty": "pavement",
+            "applicable_codes": ["CJJ 169-2012", "JTG D50-2017"]
+          }
+        },
+        {
+          "id": "subgrade",
+          "name": "路基工程",
+          "parent_filter": ["municipal", "highway"],
+          "description": "路基设计、边坡稳定、排水系统",
+          "next_level": 4,
+          "constraints": ["需考虑地质条件", "水文条件"],
+          "context_inject": {
+            "specialty": "subgrade",
+            "applicable_codes": ["JTG D30-2015"]
+          }
+        },
+        {
+          "id": "drainage",
+          "name": "给排水工程",
+          "parent_filter": ["municipal"],
+          "description": "雨水管道、污水管道、检查井设计",
+          "next_level": 4,
+          "constraints": ["需考虑排水能力", "管道埋深"],
+          "context_inject": {
+            "specialty": "drainage",
+            "applicable_codes": ["GB 50014-2021"]
+          }
+        },
+        {
+          "id": "electric",
+          "name": "电力工程",
+          "parent_filter": ["municipal"],
+          "description": "电缆沟、路灯、箱变设计",
+          "next_level": 4,
+          "constraints": ["需考虑用电负荷", "电缆截面"],
+          "context_inject": {
+            "specialty": "electric",
+            "applicable_codes": ["GB 50052-2009"]
+          }
+        },
+        {
+          "id": "traffic",
+          "name": "交通工程",
+          "parent_filter": ["municipal", "highway"],
+          "description": "标线、标志、信号灯、护栏设计",
+          "next_level": 4,
+          "constraints": ["需考虑交通流量", "安全等级"],
+          "context_inject": {
+            "specialty": "traffic",
+            "applicable_codes": ["GB 5768-2022"]
+          }
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "name": "具体布置",
+      "description": "请选择具体的设计内容",
+      "selection_mode": "single",
+      "parent_level": 3,
+      "choices": [
+        {
+          "id": "structure-layer",
+          "name": "结构层设计",
+          "parent_filter": ["pavement"],
+          "description": "面层、基层、底基层、垫层的结构设计",
+          "next_level": null,
+          "constraints": ["需计算各层厚度", "材料配合比"],
+          "context_inject": {
+            "layout": "structure-layer",
+            "design_content": ["面层设计", "基层设计", "底基层设计"]
+          }
+        },
+        {
+          "id": "material-selection",
+          "name": "材料选择",
+          "parent_filter": ["pavement"],
+          "description": "沥青、水泥、骨料等材料的选择与配比",
+          "next_level": null,
+          "constraints": ["需考虑气候条件", "交通等级"],
+          "context_inject": {
+            "layout": "material-selection",
+            "design_content": ["沥青选择", "骨料级配", "配合比设计"]
+          }
+        },
+        {
+          "id": "slope-design",
+          "name": "边坡设计",
+          "parent_filter": ["subgrade"],
+          "description": "路堤、路堑边坡的稳定性分析与设计",
+          "next_level": null,
+          "constraints": ["需进行稳定性计算", "防护措施"],
+          "context_inject": {
+            "layout": "slope-design",
+            "design_content": ["边坡稳定性", "防护措施", "排水设计"]
+          }
+        },
+        {
+          "id": "subgrade-drainage",
+          "name": "路基排水",
+          "parent_filter": ["subgrade"],
+          "description": "路基内部排水、地下排水设计",
+          "next_level": null,
+          "constraints": ["需考虑地下水水位", "排水层厚度"],
+          "context_inject": {
+            "layout": "subgrade-drainage",
+            "design_content": ["地下排水", "渗沟设计", "排水层"]
+          }
+        },
+        {
+          "id": "pipe-layout",
+          "name": "管线布置",
+          "parent_filter": ["drainage"],
+          "description": "雨水、污水管线的平面与纵断面设计",
+          "next_level": null,
+          "constraints": ["需考虑水力计算", "管道埋深"],
+          "context_inject": {
+            "layout": "pipe-layout",
+            "design_content": ["平面布置", "纵断面设计", "检查井设置"]
+          }
+        },
+        {
+          "id": "manhole-design",
+          "name": "检查井设计",
+          "parent_filter": ["drainage"],
+          "description": "雨水口、检查井的选型与布置",
+          "next_level": null,
+          "constraints": ["需考虑汇水面积", "井深限制"],
+          "context_inject": {
+            "layout": "manhole-design",
+            "design_content": ["检查井选型", "雨水口布置", "井筒设计"]
+          }
+        },
+        {
+          "id": "lighting-layout",
+          "name": "照明布置",
+          "parent_filter": ["electric"],
+          "description": "路灯的平面布置与照度计算",
+          "next_level": null,
+          "constraints": ["需满足照度标准", "功率密度要求"],
+          "context_inject": {
+            "layout": "lighting-layout",
+            "design_content": ["路灯布置", "照度计算", "电缆选型"]
+          }
+        },
+        {
+          "id": "cable-trench",
+          "name": "电缆沟设计",
+          "parent_filter": ["electric"],
+          "description": "电缆沟断面、过路管群设计",
+          "next_level": null,
+          "constraints": ["需考虑电缆截面", "埋深要求"],
+          "context_inject": {
+            "layout": "cable-trench",
+            "design_content": ["电缆沟断面", "过路管群", "接地设计"]
+          }
+        },
+        {
+          "id": "marking-design",
+          "name": "标线设计",
+          "parent_filter": ["traffic"],
+          "description": "道路标线的类型、尺寸、位置设计",
+          "next_level": null,
+          "constraints": ["需符合国标尺寸", "反光性能"],
+          "context_inject": {
+            "layout": "marking-design",
+            "design_content": ["标线类型", "尺寸设计", "反光材料"]
+          }
+        },
+        {
+          "id": "sign-design",
+          "name": "标志设计",
+          "parent_filter": ["traffic"],
+          "description": "交通标志的选型、布置与结构计算",
+          "next_level": null,
+          "constraints": ["需符合国标尺寸", "视距要求"],
+          "context_inject": {
+            "layout": "sign-design",
+            "design_content": ["标志选型", "布置位置", "结构计算"]
+          }
+        }
+      ]
+    }
+  ],
+  "context_package_template": {
+    "required_fields": ["domain_id", "version", "selections", "context", "software_skills"],
+    "optional_fields": ["constraints", "next_action"]
+  },
+  "decomposition_config": {
+    "enable_dynamic_decomposition": true,
+    "max_predefined_levels": 4,
+    "max_decomposition_depth": 6,
+    "atomic_task_criteria": [
+      "任务可在单步内完成，不需要进一步分解",
+      "任务有明确的输入和输出",
+      "任务的验收标准可自动验证",
+      "任务不涉及多个领域的知识",
+      "任务描述清晰，不会产生多种理解"
+    ],
+    "decomposition_trigger": "预定义4层引导结束后，任务仍不满足原子任务标准时触发",
+    "decomposition_prompt_template": "当前任务「{task_description}」在道路设计领域{domain_id}中仍较复杂，请分解为2-4个更具体的子任务选项，每个子任务应满足原子任务标准。"
+  }
+}

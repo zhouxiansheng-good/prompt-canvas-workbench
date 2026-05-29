@@ -1,0 +1,193 @@
+{
+  "checkpoints": [
+    {
+      "checkpoint_id": "yunshu-interaction-test-2026-init-20260529-093655",
+      "task_id": "yunshu-interaction-test-2026",
+      "phase": "init",
+      "created_at": "2026-05-29T01:36:55Z",
+      "path": ".yunshu/checkpoints/yunshu-interaction-test-2026-init-20260529-093655"
+    },
+    {
+      "checkpoint_id": "yunshu-full-test-2026-subagent-20260529-092232",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "subagent",
+      "created_at": "2026-05-29T01:22:32Z",
+      "path": ".yunshu/checkpoints/yunshu-full-test-2026-subagent-20260529-092232"
+    },
+    {
+      "checkpoint_id": "yunshu-full-test-2026-recover-20260529-092050",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "recover",
+      "created_at": "2026-05-29T01:20:50Z",
+      "path": ".yunshu/checkpoints/yunshu-full-test-2026-recover-20260529-092050"
+    },
+    {
+      "checkpoint_id": "yunshu-full-test-2026-deliver-20260529-092002",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "deliver",
+      "created_at": "2026-05-29T01:20:02Z",
+      "path": ".yunshu/checkpoints/yunshu-full-test-2026-deliver-20260529-092002"
+    },
+    {
+      "checkpoint_id": "yunshu-full-test-2026-accept-20260529-091852",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "accept",
+      "created_at": "2026-05-29T01:18:52Z",
+      "path": ".yunshu/checkpoints/yunshu-full-test-2026-accept-20260529-091852"
+    },
+    {
+      "checkpoint_id": "yunshu-full-test-2026-execute-20260529-091628",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "execute",
+      "created_at": "2026-05-29T01:16:28Z",
+      "path": ".yunshu/checkpoints/yunshu-full-test-2026-execute-20260529-091628"
+    },
+    {
+      "checkpoint_id": "yunshu-full-test-2026-plan-20260529-091130",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "plan",
+      "created_at": "2026-05-29T01:11:30Z",
+      "path": ".yunshu/checkpoints/yunshu-full-test-2026-plan-20260529-091130"
+    },
+    {
+      "checkpoint_id": "yunshu-full-test-2026-init-20260529-091040",
+      "task_id": "yunshu-full-test-2026",
+      "phase": "init",
+      "created_at": "2026-05-29T01:10:40Z",
+      "path": ".yunshu/checkpoints/yunshu-full-test-2026-init-20260529-091040"
+    },
+    {
+      "checkpoint_id": "yunshu-system-remediation-deliver-20260528-231150",
+      "task_id": "yunshu-system-remediation",
+      "phase": "deliver",
+      "created_at": "2026-05-28T15:11:50Z",
+      "path": ".yunshu/checkpoints/yunshu-system-remediation-deliver-20260528-231150"
+    },
+    {
+      "checkpoint_id": "yunshu-system-component-remediation-20260528-deliver-20260528-222333",
+      "task_id": "yunshu-system-component-remediation-20260528",
+      "phase": "deliver",
+      "created_at": "2026-05-28T14:23:33Z",
+      "path": ".yunshu/checkpoints/yunshu-system-component-remediation-20260528-deliver-20260528-222333"
+    },
+    {
+      "checkpoint_id": "yunshu-component-audit-20260527-deliver-20260527-102653",
+      "task_id": "yunshu-component-audit-20260527",
+      "phase": "deliver",
+      "created_at": "2026-05-27T02:26:53Z",
+      "path": ".yunshu/checkpoints/yunshu-component-audit-20260527-deliver-20260527-102653"
+    },
+    {
+      "checkpoint_id": "local-yunshu-fusion-audit-deliver-20260513-234639",
+      "task_id": "local-yunshu-fusion-audit",
+      "phase": "deliver",
+      "created_at": "2026-05-13T15:46:39Z",
+      "path": ".yunshu/checkpoints/local-yunshu-fusion-audit-deliver-20260513-234639"
+    },
+    {
+      "checkpoint_id": "local-yunshu-fusion-audit-deliver-20260513-234212",
+      "task_id": "local-yunshu-fusion-audit",
+      "phase": "deliver",
+      "created_at": "2026-05-13T15:42:12Z",
+      "path": ".yunshu/checkpoints/local-yunshu-fusion-audit-deliver-20260513-234212"
+    },
+    {
+      "checkpoint_id": "yunshu-full-cycle-component-validation-deliver-20260513-102911",
+      "task_id": "yunshu-full-cycle-component-validation",
+      "phase": "deliver",
+      "created_at": "2026-05-13T02:29:11Z",
+      "path": ".yunshu/checkpoints/yunshu-full-cycle-component-validation-deliver-20260513-102911"
+    },
+    {
+      "checkpoint_id": "yunshu-full-cycle-component-validation-accept-20260513-102731",
+      "task_id": "yunshu-full-cycle-component-validation",
+      "phase": "accept",
+      "created_at": "2026-05-13T02:27:31Z",
+      "path": ".yunshu/checkpoints/yunshu-full-cycle-component-validation-accept-20260513-102731"
+    },
+    {
+      "checkpoint_id": "yunshu-full-cycle-component-validation-execute-20260513-102634",
+      "task_id": "yunshu-full-cycle-component-validation",
+      "phase": "execute",
+      "created_at": "2026-05-13T02:26:34Z",
+      "path": ".yunshu/checkpoints/yunshu-full-cycle-component-validation-execute-20260513-102634"
+    },
+    {
+      "checkpoint_id": "bmad-yunshu-enhancement-v1-deliver-20260513-093316",
+      "task_id": "bmad-yunshu-enhancement-v1",
+      "phase": "deliver",
+      "created_at": "2026-05-13T01:33:16Z",
+      "path": ".yunshu/checkpoints/bmad-yunshu-enhancement-v1-deliver-20260513-093316"
+    },
+    {
+      "checkpoint_id": "bmad-yunshu-enhancement-v1-deliver-20260513-093117",
+      "task_id": "bmad-yunshu-enhancement-v1",
+      "phase": "deliver",
+      "created_at": "2026-05-13T01:31:17Z",
+      "path": ".yunshu/checkpoints/bmad-yunshu-enhancement-v1-deliver-20260513-093117"
+    },
+    {
+      "checkpoint_id": "bmad-yunshu-enhancement-v1-execute-20260513-091542",
+      "task_id": "bmad-yunshu-enhancement-v1",
+      "phase": "execute",
+      "created_at": "2026-05-13T01:15:42Z",
+      "path": ".yunshu/checkpoints/bmad-yunshu-enhancement-v1-execute-20260513-091542"
+    },
+    {
+      "checkpoint_id": "meta-cognition-output-sufficiency-deliver-20260511-091634",
+      "task_id": "meta-cognition-output-sufficiency",
+      "phase": "deliver",
+      "created_at": "2026-05-11T01:16:34Z",
+      "path": ".yunshu/checkpoints/meta-cognition-output-sufficiency-deliver-20260511-091634"
+    },
+    {
+      "checkpoint_id": "meta-cognition-output-sufficiency-deliver-20260511-091515",
+      "task_id": "meta-cognition-output-sufficiency",
+      "phase": "deliver",
+      "created_at": "2026-05-11T01:15:15Z",
+      "path": ".yunshu/checkpoints/meta-cognition-output-sufficiency-deliver-20260511-091515"
+    },
+    {
+      "checkpoint_id": "yunshu-context-ledger-accept-20260510-110545",
+      "task_id": "yunshu-context-ledger",
+      "phase": "accept",
+      "created_at": "2026-05-10T03:05:45Z",
+      "path": ".yunshu/checkpoints/yunshu-context-ledger-accept-20260510-110545"
+    },
+    {
+      "checkpoint_id": "yunshu-context-ledger-deliver-20260510-105557",
+      "task_id": "yunshu-context-ledger",
+      "phase": "deliver",
+      "created_at": "2026-05-10T02:55:57Z",
+      "path": ".yunshu/checkpoints/yunshu-context-ledger-deliver-20260510-105557"
+    },
+    {
+      "checkpoint_id": "yunshu-system-remediation-deliver-20260509-194027",
+      "task_id": "yunshu-system-remediation",
+      "phase": "deliver",
+      "created_at": "2026-05-09T11:40:27Z",
+      "path": ".yunshu\\checkpoints\\yunshu-system-remediation-deliver-20260509-194027"
+    },
+    {
+      "checkpoint_id": "yunshu-system-audit-deliver-20260509-181835",
+      "task_id": "yunshu-system-audit",
+      "phase": "deliver",
+      "created_at": "2026-05-09T10:18:35Z",
+      "path": ".yunshu\\checkpoints\\yunshu-system-audit-deliver-20260509-181835"
+    },
+    {
+      "checkpoint_id": "yunshu-system-audit-execute-20260509-175447",
+      "task_id": "yunshu-system-audit",
+      "phase": "execute",
+      "created_at": "2026-05-09T09:54:47Z",
+      "path": ".yunshu\\checkpoints\\yunshu-system-audit-execute-20260509-175447"
+    },
+    {
+      "checkpoint_id": "yunshu-v3-upgrade-plan-20260509-172336",
+      "task_id": "yunshu-v3-upgrade",
+      "phase": "plan",
+      "created_at": "2026-05-09T09:23:36Z",
+      "path": ".yunshu\\checkpoints\\yunshu-v3-upgrade-plan-20260509-172336"
+    }
+  ]
+}
