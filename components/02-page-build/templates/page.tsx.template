@@ -1,0 +1,318 @@
+"use client";
+
+import { useState, useMemo, useEffect } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import PromptCard from "@/components/PromptCard";
+import { prompts, categories } from "@/lib/prompts";
+
+const BIG_TYPES = [
+  { id: "prompt", label: "💡 提示词模板" },
+  { id: "persona", label: "👤 个人规则" },
+  { id: "skill", label: "🥋 核心技能 (Skill)" },
+  { id: "project", label: "📦 项目规则" }
+];
+
+export default function Home() {
+  const [currentTheme, setCurrentTheme] = useState("paper");
+  const [activeBigType, setActiveBigType] = useState<string>("prompt");
+  const [activeTag, setActiveTag] = useState<string>("all");
+  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const [openCardIds, setOpenCardIds] = useState<string[]>(["free-1", "free-2"]);
+  const [cardPositions, setCardPositions] = useState<Record<string, { x: number; y: number }>>({});
+  const [focusOrder, setFocusOrder] = useState<string[]>([]);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const handleBigTypeChange = (typeId: string) => {
+    setActiveBigType(typeId);
+    setActiveTag("all");
+  };
+
+  const subTagsForCurrentType = useMemo(() => {
+    const matchedPrompts = prompts.filter(p => (p.type || "prompt") === activeBigType);
+    const tagIds = new Set<string>();
+    matchedPrompts.forEach(p => {
+      if (p.category) tagIds.add(p.category);
+    });
+    return categories.filter(cat => tagIds.has(cat.id));
+  }, [activeBigType]);
+
+  const sidebarDisplayPrompts = useMemo(() => {
+    return prompts.filter(p => {
+      const typeMatch = (p.type || "prompt") === activeBigType;
+      const tagMatch = activeTag === "all" || p.category === activeTag;
+      return typeMatch && tagMatch;
+    });
+  }, [activeBigType, activeTag]);
+
+  const toggleCard = (id: string) => {
+    if (openCardIds.includes(id)) {
+      setOpenCardIds(openCardIds.filter((cid) => cid !== id));
+      setCardPositions((prev) => {
+        const next = { ...prev };
+        delete next[id];
+        return next;
+      });
+    } else {
+      setOpenCardIds([...openCardIds, id]);
+      if (!cardPositions[id]) {
+        const startX = isMobile ? 16 + Math.random() * 40 : 360 + Math.random() * 80;
+        const startY = isMobile ? 80 + Math.random() * 40 : 60 + Math.random() * 80;
+        setCardPositions((prev) => ({
+          ...prev,
+          [id]: { x: startX, y: startY },
+        }));
+      }
+      bringToFront(id);
+    }
+  };
+
+  const bringToFront = (id: string) => {
+    setFocusOrder((prev) => [...prev.filter((cid) => cid !== id), id]);
+  };
+
+  const autoArrange = () => {
+    const arranged: Record<string, { x: number; y: number }> = {};
+    const cardW = isMobile ? Math.min(330, window.innerWidth - 32) : 330;
+    const gap = isMobile ? 12 : 20;
+    const startX = isMobile ? 16 : 350;
+    const startY = isMobile ? 80 : 40;
+    const availableWidth = isMobile ? window.innerWidth - 32 : window.innerWidth - 360;
+    const cols = Math.max(1, Math.floor((availableWidth + gap) / (cardW + gap)));
+
+    openCardIds.forEach((id, index) => {
+      const col = index % cols;
+      const row = Math.floor(index / cols);
+      arranged[id] = {
+        x: startX + col * (cardW + gap),
+        y: startY + row * 260,
+      };
+    });
+    setCardPositions(arranged);
+  };
+
+  const SidebarContent = () => (
+    <div className="flex-1 overflow-y-auto p-3 flex flex-col space-y-2 scrollbar-none">
+      {BIG_TYPES.map((bt) => {
+        const isCurrentOpen = activeBigType === bt.id;
+        return (
+          <div
+            key={bt.id}
+            className={`flex flex-col rounded-xl border-2 border-theme-border overflow-hidden transition-all duration-300 ${
+              isCurrentOpen ? "flex-1 min-h-[300px] bg-theme-card" : "h-12 bg-theme-paper flex-shrink-0"
+            }`}
+          >
+            <div
+              onClick={() => handleBigTypeChange(bt.id)}
+              className="h-11 px-4 flex items-center justify-between cursor-pointer bg-theme-card hover:bg-theme-canvas/50 border-b-2 border-theme-border select-none"
+            >
+              <span className="text-xs font-bold text-theme-text font-serif">{bt.label}</span>
+              <span className="text-xs text-theme-muted">{isCurrentOpen ? "▼" : "▶"}</span>
+            </div>
+
+            {isCurrentOpen && (
+              <div className="flex-1 flex flex-col overflow-hidden">
+                <div className="p-2 border-b border-theme-border bg-theme-paper flex flex-wrap gap-1 flex-shrink-0">
+                  <button
+                    onClick={() => setActiveTag("all")}
+                    className="text-[10px] font-bold px-2 py-0.5 rounded-full border transition-all whitespace-nowrap"
+                    style={{
+                      backgroundColor: activeTag === "all" ? "var(--theme-border)" : "transparent",
+                      color: activeTag === "all" ? "var(--theme-paper)" : "var(--theme-muted)",
+                      borderColor: "var(--theme-border)",
+                    }}
+                  >
+                    全部标签
+                  </button>
+                  {subTagsForCurrentType.map((tag) => (
+                    <button
+                      key={tag.id}
+                      onClick={() => setActiveTag(tag.id)}
+                      className="text-[10px] font-bold px-2 py-0.5 rounded-full border transition-all whitespace-nowrap"
+                      style={{
+                        backgroundColor: activeTag === tag.id ? "var(--theme-border)" : "transparent",
+                        color: activeTag === tag.id ? "var(--theme-paper)" : "var(--theme-muted)",
+                        borderColor: "var(--theme-border)",
+                      }}
+                    >
+                      {tag.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="flex-1 overflow-y-auto p-2 space-y-2 bg-theme-canvas/20 scrollbar-none">
+                  {sidebarDisplayPrompts.length === 0 ? (
+                    <p className="text-[11px] text-center text-theme-muted py-8">该分类下暂无资源</p>
+                  ) : (
+                    sidebarDisplayPrompts.map((p) => {
+                      const isOpened = openCardIds.includes(p.id);
+                      return (
+                        <div
+                          key={p.id}
+                          onClick={() => {
+                            toggleCard(p.id);
+                            if (isMobile) setIsMobileSidebarOpen(false);
+                          }}
+                          className={`p-2 rounded-lg border-2 border-theme-border cursor-pointer transition-all ${
+                            isOpened ? "bg-theme-canvas opacity-40" : "bg-theme-paper hover:shadow-retro-sm"
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <h4 className="text-xs font-bold text-theme-text truncate max-w-[170px]">
+                              {p.title}
+                            </h4>
+                            <span className="text-[9px] font-bold font-mono border border-theme-border px-1 rounded bg-theme-card text-theme-muted">
+                              {isOpened ? "已上屏" : "＋ 调出"}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <div className="flex flex-col h-screen select-none relative" data-theme={currentTheme}>
+      <Header onMenuClick={() => setIsMobileSidebarOpen(true)} showMenu={isMobile} />
+
+      <div className="w-full bg-theme-paper border-b-2 border-theme-border px-4 lg:px-6 py-2.5 flex flex-wrap items-center justify-between gap-2 lg:gap-4 z-40 shadow-sm flex-shrink-0">
+        <div className="flex items-center gap-2 lg:gap-3">
+          <span className="text-xs font-bold font-mono px-2 py-1 bg-theme-canvas border-2 border-theme-border rounded shadow-retro-sm hidden sm:inline">
+            ⚙️ 工作台操控
+          </span>
+          <button
+            onClick={autoArrange}
+            className="text-xs font-bold px-3 py-1 border-2 border-theme-border rounded bg-theme-canvas hover:bg-theme-paper active:translate-y-0.5 transition-all text-theme-text"
+          >
+            🧩 规整卡片
+          </button>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-bold text-theme-muted font-serif hidden sm:inline">美学调色盘:</span>
+          <div className="flex gap-1 border-2 border-theme-border rounded-lg p-0.5 bg-theme-canvas">
+            {[
+              { id: "paper", name: "经典" },
+              { id: "blackboard", name: "墨绿" },
+              { id: "nordic", name: "极夜" },
+              { id: "dopamine", name: "多巴胺" },
+            ].map((t) => (
+              <button
+                key={t.id}
+                onClick={() => setCurrentTheme(t.id)}
+                className="text-[11px] font-bold px-2 py-0.5 rounded transition-all"
+                style={{
+                  backgroundColor: currentTheme === t.id ? "var(--theme-border)" : "transparent",
+                  color: currentTheme === t.id ? "var(--theme-paper)" : "var(--theme-text)",
+                }}
+              >
+                {t.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex-1 flex overflow-hidden relative">
+        {/* Desktop Sidebar */}
+        <aside className="hidden lg:flex w-[320px] h-full bg-theme-paper border-r-2 border-theme-border flex-col z-30 shadow-md">
+          <SidebarContent />
+        </aside>
+
+        {/* Mobile Sidebar Drawer */}
+        {isMobileSidebarOpen && isMobile && (
+          <>
+            <div
+              className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+              onClick={() => setIsMobileSidebarOpen(false)}
+            />
+            <aside className="fixed left-0 top-0 h-full w-[280px] bg-theme-paper border-r-2 border-theme-border flex flex-col z-50 shadow-xl lg:hidden">
+              <div className="h-12 px-4 flex items-center justify-between border-b-2 border-theme-border bg-theme-card">
+                <span className="text-xs font-bold text-theme-text font-serif">📂 收纳架</span>
+                <button
+                  onClick={() => setIsMobileSidebarOpen(false)}
+                  className="w-7 h-7 flex items-center justify-center text-xs font-bold border border-theme-border rounded bg-theme-paper hover:bg-red-500 hover:text-white"
+                >
+                  ✕
+                </button>
+              </div>
+              <SidebarContent />
+            </aside>
+          </>
+        )}
+
+        <main className="flex-1 h-full relative p-4 lg:p-6 overflow-auto scrollbar-none min-w-0">
+          <div className="absolute bottom-8 right-8 pointer-events-none select-none opacity-5 hidden lg:block">
+            <h1 className="text-9xl font-black font-serif uppercase tracking-tighter text-theme-text">
+              Canvas
+            </h1>
+          </div>
+
+          {/* Mobile: flex column layout */}
+          {isMobile ? (
+            <div className="flex flex-col gap-4 pb-20">
+              {prompts
+                .filter((p) => openCardIds.includes(p.id))
+                .map((prompt) => (
+                  <PromptCard
+                    key={prompt.id}
+                    prompt={prompt}
+                    position={{ x: 0, y: 0 }}
+                    isOpen={true}
+                    onFocus={() => bringToFront(prompt.id)}
+                    onClose={() => toggleCard(prompt.id)}
+                    zIndex={focusOrder.indexOf(prompt.id) + 10}
+                    onDrag={() => {}}
+                    isMobile={true}
+                  />
+                ))}
+            </div>
+          ) : (
+            /* Desktop: absolute positioned draggable cards */
+            prompts.map((prompt) => {
+              const isOpen = openCardIds.includes(prompt.id);
+              const pos = cardPositions[prompt.id] || { x: 360, y: 40 };
+              const zIndex = focusOrder.indexOf(prompt.id) + 10;
+
+              return (
+                <PromptCard
+                  key={prompt.id}
+                  prompt={prompt}
+                  position={pos}
+                  isOpen={isOpen}
+                  onFocus={() => bringToFront(prompt.id)}
+                  onClose={() => toggleCard(prompt.id)}
+                  zIndex={zIndex}
+                  onDrag={(x, y) => {
+                    setCardPositions((prev) => ({
+                      ...prev,
+                      [prompt.id]: { x, y },
+                    }));
+                  }}
+                  isMobile={false}
+                />
+              );
+            })
+          )}
+        </main>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}

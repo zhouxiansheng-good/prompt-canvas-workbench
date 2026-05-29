@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === 方案 A：复古工作台 (默认) === */
+:root, [data-theme="paper"] {
+  --theme-canvas: #eae6df;
+  --theme-paper: #ffffff;
+  --theme-card: #faf9f6;
+  --theme-text: #1c1c1c;
+  --theme-muted: #615f5a;
+  --theme-border: #2c2c2c;
+  --theme-grid: rgba(44, 44, 44, 0.04);
+}
+
+/* === 方案 B：包豪斯墨绿 === */
+[data-theme="blackboard"] {
+  --theme-canvas: #12241c;
+  --theme-paper: #1a3328;
+  --theme-card: #162c22;
+  --theme-text: #f0fdf4;
+  --theme-muted: #8cae9a;
+  --theme-border: #e8f5e9;
+  --theme-grid: rgba(240, 253, 244, 0.05);
+}
+
+/* === 方案 C：北欧极夜 === */
+[data-theme="nordic"] {
+  --theme-canvas: #0b0f19;
+  --theme-paper: #111827;
+  --theme-card: #1f2937;
+  --theme-text: #f9fafb;
+  --theme-muted: #9ca3af;
+  --theme-border: #38bdf8;
+  --theme-grid: rgba(56, 189, 248, 0.06);
+}
+
+/* === 方案 D：多巴胺柔和派 === */
+[data-theme="dopamine"] {
+  --theme-canvas: #e0f2fe;
+  --theme-paper: #ffffff;
+  --theme-card: #fef2f2;
+  --theme-text: #4c1d95;
+  --theme-muted: #7c3aed;
+  --theme-border: #4c1d95;
+  --theme-grid: rgba(76, 29, 149, 0.04);
+}
+
+body {
+  background-color: var(--theme-canvas);
+  color: var(--theme-text);
+  background-image: 
+    linear-gradient(to right, var(--theme-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--theme-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  overflow-x: hidden;
+}
+
+@media (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
